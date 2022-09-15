@@ -29,7 +29,7 @@
 	<style name="HeadingLabel3" style="Heading3"/>
 	<style name="HeadingIndex3" style="Heading3"/>
 	<parameter name="REPORT_DIR" class="java.lang.String" isForPrompting="false">
-		<defaultValueExpression><![CDATA["Reports\"]]></defaultValueExpression>
+		<defaultValueExpression><![CDATA["Reports\\"]]></defaultValueExpression>
 	</parameter>
 	<parameter name="simulationName" class="java.lang.String"/>
 	<parameter name="watershedName" class="java.lang.String" isForPrompting="false"/>
