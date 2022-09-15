@@ -2,7 +2,7 @@
 <!-- Created with Jaspersoft Studio version 6.11.0.final using JasperReports Library version 6.11.0-0c4056ccaa4d25a5a8c45672d2f764ea3498bebb  -->
 <jasperReport xmlns="http://jasperreports.sourceforge.net/jasperreports" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://jasperreports.sourceforge.net/jasperreports http://jasperreports.sourceforge.net/xsd/jasperreport.xsd" name="Reservoir_Profile_Subreport" language="groovy" pageWidth="468" pageHeight="648" columnWidth="468" leftMargin="0" rightMargin="0" topMargin="0" bottomMargin="0" uuid="127f2104-c03a-478b-b43f-003f6e814e84">
 	<property name="com.jaspersoft.studio.report.description" value=""/>
-	<property name="net.sf.jasperreports.data.adapter" value="..\Datasources\USBRAutomatedReportDataAdapter.xml"/>
+	<property name="net.sf.jasperreports.data.adapter" value="..\\Datasources\\USBRAutomatedReportDataAdapter.xml"/>
 	<property name="com.jaspersoft.studio.unit." value="pixel"/>
 	<property name="com.jaspersoft.studio.unit.pageHeight" value="inch"/>
 	<property name="com.jaspersoft.studio.unit.pageWidth" value="inch"/>
@@ -15,7 +15,7 @@
 	<parameter name="p_Reservoir" class="java.lang.String" isForPrompting="false">
 		<defaultValueExpression><![CDATA["Shasta"]]></defaultValueExpression>
 	</parameter>	<parameter name="REPORT_DIR" class="java.lang.String" isForPrompting="false">
-		<defaultValueExpression><![CDATA["Reports\"]]></defaultValueExpression>
+		<defaultValueExpression><![CDATA["Reports\\"]]></defaultValueExpression>
 	</parameter>
 	<parameter name="p_FigureNumber" class="java.lang.Integer" isForPrompting="false">
 		<defaultValueExpression><![CDATA[1]]></defaultValueExpression>
@@ -109,7 +109,7 @@
 					<property name="com.jaspersoft.studio.unit.height" value="px"/>
 					<property name="com.jaspersoft.studio.unit.width" value="px"/>
 				</reportElement>
-				<imageExpression><![CDATA["Images/"+$F{Profile_Image}]]></imageExpression>
+				<imageExpression><![CDATA["..\\images\\"+$F{Profile_Image}]]></imageExpression>
 			</image>
 			<break>
 				<reportElement positionType="Float" x="0" y="502" width="468" height="1" uuid="e9fef97b-06d5-4ae0-9c13-1f07bf4018d1">

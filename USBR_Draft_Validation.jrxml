@@ -4,7 +4,7 @@
 	<property name="net.sf.jasperreports.print.create.bookmarks" value="true"/>
 	<property name="com.jaspersoft.studio.book.group.cover.header" value="Cover and Table of Contents"/>
 	<property name="com.jaspersoft.studio.book.group.cover.footer" value="Backcover"/>
-	<property name="net.sf.jasperreports.data.adapter" value="..\Datasources\USBRAutomatedReportDataAdapter.xml"/>
+	<property name="net.sf.jasperreports.data.adapter" value="..\\Datasources\\USBRAutomatedReportDataAdapter.xml"/>
 	<property name="net.sf.jasperreports.export.docx.frames.as.nested.tables" value="false"/>
 	<parameter name="watershedName" class="java.lang.String" isForPrompting="false"/>
 	<parameter name="simulationName" class="java.lang.String" isForPrompting="false"/>
@@ -15,7 +15,7 @@
 		<defaultValueExpression><![CDATA[true]]></defaultValueExpression>
 	</parameter>
 	<parameter name="REPORT_DIR" class="java.lang.String" isForPrompting="false">
-		<defaultValueExpression><![CDATA["Reports\"]]></defaultValueExpression>
+		<defaultValueExpression><![CDATA["Reports\\"]]></defaultValueExpression>
 	</parameter>
 	<parameter name="Install_Dir" class="java.lang.String" isForPrompting="false"/>
 	<queryString language="XPath">
@@ -73,7 +73,7 @@
 					<subreportParameter name="Install_Dir">
 						<subreportParameterExpression><![CDATA[$P{Install_Dir}]]></subreportParameterExpression>
 					</subreportParameter>
-					<subreportExpression><![CDATA[$P{REPORT_DIR} + "\JasperC\USBR_Draft_Validation_cover.jasper"]]></subreportExpression>
+					<subreportExpression><![CDATA[$P{REPORT_DIR} + "\\JasperC\\USBR_Draft_Validation_cover.jasper"]]></subreportExpression>
 				</p:subreportPart>
 			</part>
 			<part evaluationTime="Report" uuid="56ab525c-754f-4f48-a52c-7cc23934be3d">
@@ -91,7 +91,7 @@
 					<subreportParameter name="REPORT_DIR">
 						<subreportParameterExpression><![CDATA[$P{REPORT_DIR}]]></subreportParameterExpression>
 					</subreportParameter>
-					<subreportExpression><![CDATA[$P{REPORT_DIR} + "\JasperC\USBR_Draft_Validation_toc.jasper"]]></subreportExpression>
+					<subreportExpression><![CDATA[$P{REPORT_DIR} + "\\JasperC\\USBR_Draft_Validation_toc.jasper"]]></subreportExpression>
 				</p:subreportPart>
 			</part>
 			<part evaluationTime="Report" uuid="b9b0d099-5f6a-4807-a879-d3c72c15dc6a">
@@ -109,7 +109,7 @@
 					<subreportParameter name="REPORT_DIR">
 						<subreportParameterExpression><![CDATA[$P{REPORT_DIR}]]></subreportParameterExpression>
 					</subreportParameter>
-					<subreportExpression><![CDATA[$P{REPORT_DIR} + "\JasperC\USBR_Draft_Validation_tof.jasper"]]></subreportExpression>
+					<subreportExpression><![CDATA[$P{REPORT_DIR} + "\\JasperC\\USBR_Draft_Validation_tof.jasper"]]></subreportExpression>
 				</p:subreportPart>
 			</part>
 			<part evaluationTime="Report" uuid="58a16355-fa11-4bfc-af20-3c2c817f7d52">
@@ -127,7 +127,7 @@
 					<subreportParameter name="REPORT_DIR">
 						<subreportParameterExpression><![CDATA[$P{REPORT_DIR}]]></subreportParameterExpression>
 					</subreportParameter>
-					<subreportExpression><![CDATA[$P{REPORT_DIR} + "\JasperC\USBR_Draft_Validation_tot.jasper"]]></subreportExpression>
+					<subreportExpression><![CDATA[$P{REPORT_DIR} + "\\JasperC\\USBR_Draft_Validation_tot.jasper"]]></subreportExpression>
 				</p:subreportPart>
 			</part>
 		</groupHeader>
@@ -163,7 +163,7 @@
 				<subreportParameter name="REPORT_DIR">
 					<subreportParameterExpression><![CDATA[$P{REPORT_DIR}]]></subreportParameterExpression>
 				</subreportParameter>
-				<subreportExpression><![CDATA[$P{REPORT_DIR} + "\JasperC\Main.jasper"]]></subreportExpression>
+				<subreportExpression><![CDATA[$P{REPORT_DIR} + "\\JasperC\\Main.jasper"]]></subreportExpression>
 			</p:subreportPart>
 		</part>
 	</detail>

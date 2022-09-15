@@ -17,7 +17,7 @@
 	<parameter name="analysisEndTime" class="java.lang.String" isForPrompting="false"/>
 	<parameter name="simulationDate" class="java.lang.String" isForPrompting="false"/>
 	<parameter name="REPORT_DIR" class="java.lang.String" isForPrompting="false">
-		<defaultValueExpression><![CDATA["Reports\"]]></defaultValueExpression>
+		<defaultValueExpression><![CDATA["Reports\\"]]></defaultValueExpression>
 	</parameter>
 	<parameter name="Install_Dir" class="java.lang.String" isForPrompting="false"/>
 	<queryString language="XPath">
@@ -55,7 +55,7 @@
 					<property name="local_mesure_unitx" value="pixel"/>
 					<property name="com.jaspersoft.studio.unit.x" value="px"/>
 				</reportElement>
-				<imageExpression><![CDATA[$P{Install_Dir}+"\reports\Jasper\wave.png"]]></imageExpression>
+				<imageExpression><![CDATA[$P{Install_Dir}+"\\reports\\Jasper\\wave.png"]]></imageExpression>
 			</image>
 			<textField>
 				<reportElement stretchType="RelativeToBandHeight" x="72" y="116" width="468" height="41" forecolor="#2F5496" uuid="5bb49d37-ea51-4ca3-a18a-38cb0e66e0ee"/>
