@@ -1,0 +1,111 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- Created with Jaspersoft Studio version 6.16.0.final using JasperReports Library version 6.16.0-48579d909b7943b64690c65c71e07e0b80981928  -->
+<jasperReport xmlns="http://jasperreports.sourceforge.net/jasperreports" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://jasperreports.sourceforge.net/jasperreports http://jasperreports.sourceforge.net/xsd/jasperreport.xsd" name="USBR_Draft_Validation_cover" language="groovy" pageWidth="612" pageHeight="792" whenNoDataType="NoPages" columnWidth="612" leftMargin="0" rightMargin="0" topMargin="0" bottomMargin="0" whenResourceMissingType="Empty" uuid="c50b24eb-eb33-413f-8e75-e7e20a5341fd">
+	<property name="net.sf.jasperreports.data.adapter" value="Datasources/USBRAutomatedReportDataAdapter.xml"/>
+	<property name="com.jaspersoft.studio.unit." value="inch"/>
+	<property name="com.jaspersoft.studio.unit.pageHeight" value="inch"/>
+	<property name="com.jaspersoft.studio.unit.pageWidth" value="inch"/>
+	<property name="com.jaspersoft.studio.unit.topMargin" value="inch"/>
+	<property name="com.jaspersoft.studio.unit.bottomMargin" value="inch"/>
+	<property name="com.jaspersoft.studio.unit.leftMargin" value="inch"/>
+	<property name="com.jaspersoft.studio.unit.rightMargin" value="inch"/>
+	<property name="com.jaspersoft.studio.unit.columnWidth" value="inch"/>
+	<property name="com.jaspersoft.studio.unit.columnSpacing" value="inch"/>
+	<parameter name="watershedName" class="java.lang.String" isForPrompting="false"/>
+	<parameter name="simulationName" class="java.lang.String" isForPrompting="false"/>
+	<parameter name="analysisStartTime" class="java.lang.String" isForPrompting="false"/>
+	<parameter name="analysisEndTime" class="java.lang.String" isForPrompting="false"/>
+	<parameter name="simulationDate" class="java.lang.String" isForPrompting="false"/>
+	<parameter name="REPORT_DIR" class="java.lang.String" isForPrompting="false">
+		<defaultValueExpression><![CDATA["Reports\"]]></defaultValueExpression>
+	</parameter>
+	<parameter name="Install_Dir" class="java.lang.String" isForPrompting="false"/>
+	<queryString language="XPath">
+		<![CDATA[/USBR_Automated_Report/Cover_Page]]>
+	</queryString>
+	<field name="Title" class="java.lang.String">
+		<property name="net.sf.jasperreports.xpath.field.expression" value="Title"/>
+		<fieldDescription><![CDATA[Title]]></fieldDescription>
+	</field>
+	<field name="Project" class="java.lang.String">
+		<property name="net.sf.jasperreports.xpath.field.expression" value="Project"/>
+		<fieldDescription><![CDATA[Project]]></fieldDescription>
+	</field>
+	<field name="Contact_Info" class="java.lang.String">
+		<property name="net.sf.jasperreports.xpath.field.expression" value="Contact_Info"/>
+		<fieldDescription><![CDATA[Contact_Info]]></fieldDescription>
+	</field>
+	<field name="Pictures" class="java.lang.String">
+		<property name="net.sf.jasperreports.xpath.field.expression" value="Pictures"/>
+		<fieldDescription><![CDATA[Pictures]]></fieldDescription>
+	</field>
+	<field name="Date" class="java.lang.String">
+		<property name="net.sf.jasperreports.xpath.field.expression" value="ancestor::USBR_Automated_Report/@Date"/>
+		<fieldDescription><![CDATA[ancestor::USBR_Automated_Report/@Date]]></fieldDescription>
+	</field>
+	<field name="SimulationName" class="java.lang.String">
+		<property name="net.sf.jasperreports.xpath.field.expression" value="ancestor::USBR_Automated_Report/@SimulationName"/>
+		<fieldDescription><![CDATA[ancestor::USBR_Automated_Report/@SimulationName]]></fieldDescription>
+	</field>
+	<title>
+		<band height="792" splitType="Stretch">
+			<property name="com.jaspersoft.studio.unit.height" value="px"/>
+			<image scaleImage="FillFrame">
+				<reportElement x="0" y="319" width="612" height="473" uuid="7d5f399a-cbec-48b3-979b-064c0b477ca2">
+					<property name="local_mesure_unitx" value="pixel"/>
+					<property name="com.jaspersoft.studio.unit.x" value="px"/>
+				</reportElement>
+				<imageExpression><![CDATA[$P{Install_Dir}+"\reports\Jasper\wave.png"]]></imageExpression>
+			</image>
+			<textField>
+				<reportElement stretchType="RelativeToBandHeight" x="72" y="116" width="468" height="41" forecolor="#2F5496" uuid="5bb49d37-ea51-4ca3-a18a-38cb0e66e0ee"/>
+				<box leftPadding="0" rightPadding="0"/>
+				<textElement textAlignment="Left" markup="styled">
+					<font size="20"/>
+				</textElement>
+				<textFieldExpression><![CDATA["DRAFT Temperature Model Validation Summary Report"]]></textFieldExpression>
+			</textField>
+			<textField textAdjust="StretchHeight" isBlankWhenNull="true">
+				<reportElement stretchType="RelativeToBandHeight" x="72" y="219" width="468" height="38" uuid="7f58d454-cae0-4ebb-9ccd-c885124eb525">
+					<property name="com.jaspersoft.studio.unit.x" value="pixel"/>
+					<property name="com.jaspersoft.studio.unit.height" value="px"/>
+				</reportElement>
+				<box leftPadding="20" rightPadding="20"/>
+				<textElement textAlignment="Left" markup="styled">
+					<font size="14"/>
+				</textElement>
+				<textFieldExpression><![CDATA["Project: USBR Framework Test " + $P{watershedName}]]></textFieldExpression>
+			</textField>
+			<textField textAdjust="StretchHeight" isBlankWhenNull="true">
+				<reportElement stretchType="RelativeToBandHeight" x="72" y="257" width="468" height="19" uuid="74ddd512-2507-4420-9a72-d8d59b001986">
+					<property name="com.jaspersoft.studio.unit.height" value="px"/>
+				</reportElement>
+				<box leftPadding="20" rightPadding="20"/>
+				<textElement textAlignment="Left" markup="styled">
+					<font size="14"/>
+				</textElement>
+				<textFieldExpression><![CDATA["Simulation: " + $P{simulationName}]]></textFieldExpression>
+			</textField>
+			<textField textAdjust="StretchHeight" isBlankWhenNull="true">
+				<reportElement stretchType="RelativeToBandHeight" x="72" y="295" width="468" height="19" uuid="8a253331-fd4c-4183-8696-67b9a2d8e721">
+					<property name="com.jaspersoft.studio.unit.height" value="px"/>
+				</reportElement>
+				<box leftPadding="20" rightPadding="20"/>
+				<textElement textAlignment="Left" markup="styled">
+					<font size="14"/>
+				</textElement>
+				<textFieldExpression><![CDATA["Report Date: " + new SimpleDateFormat("MMMM dd, yyyy").format(new Date())]]></textFieldExpression>
+			</textField>
+			<textField textAdjust="StretchHeight" isBlankWhenNull="true">
+				<reportElement stretchType="RelativeToBandHeight" x="72" y="276" width="468" height="19" uuid="f8ca8d37-471b-48d7-b99a-91e57d23fa8e">
+					<property name="com.jaspersoft.studio.unit.height" value="px"/>
+				</reportElement>
+				<box leftPadding="20" rightPadding="20"/>
+				<textElement textAlignment="Left" markup="styled">
+					<font size="14"/>
+				</textElement>
+				<textFieldExpression><![CDATA["Simulation Date: " + $P{simulationDate}]]></textFieldExpression>
+			</textField>
+		</band>
+	</title>
+</jasperReport>

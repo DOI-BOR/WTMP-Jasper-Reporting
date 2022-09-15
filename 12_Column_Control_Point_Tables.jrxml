@@ -1,0 +1,106 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- Created with Jaspersoft Studio version 6.17.0.final using JasperReports Library version 6.17.0-6d93193241dd8cc42629e188b94f9e0bc5722efd  -->
+<jasperReport xmlns="http://jasperreports.sourceforge.net/jasperreports" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://jasperreports.sourceforge.net/jasperreports http://jasperreports.sourceforge.net/xsd/jasperreport.xsd" name="12_Column_Control_Point_Tables" language="groovy" pageWidth="468" pageHeight="648" columnWidth="468" leftMargin="0" rightMargin="0" topMargin="0" bottomMargin="0" uuid="127f2104-c03a-478b-b43f-003f6e814e84">
+	<property name="com.jaspersoft.studio.report.description" value=""/>
+	<property name="net.sf.jasperreports.data.adapter" value="..\Datasources\USBRAutomatedReportDataAdapter.xml"/>
+	<property name="com.jaspersoft.studio.unit." value="pixel"/>
+	<property name="com.jaspersoft.studio.unit.topMargin" value="pixel"/>
+	<property name="com.jaspersoft.studio.unit.bottomMargin" value="pixel"/>
+	<property name="com.jaspersoft.studio.unit.leftMargin" value="pixel"/>
+	<property name="com.jaspersoft.studio.unit.rightMargin" value="pixel"/>
+	<property name="com.jaspersoft.studio.unit.columnWidth" value="pixel"/>
+	<property name="com.jaspersoft.studio.unit.columnSpacing" value="pixel"/>
+	<parameter name="p_ReportElementOrder" class="java.lang.Integer" isForPrompting="false">
+		<defaultValueExpression><![CDATA[33]]></defaultValueExpression>
+	</parameter>
+	<parameter name="REPORT_DIR" class="java.lang.String" isForPrompting="false">
+		<defaultValueExpression><![CDATA["Reports\"]]></defaultValueExpression>
+	</parameter>
+	<queryString language="xPath">
+		<![CDATA[/USBR_Automated_Report/Report_Group/Report_Subgroup/Report_Element/Output_Temp_Flow/Output_Table]]>
+	</queryString>
+	<field name="TableDescription" class="java.lang.String">
+		<property name="net.sf.jasperreports.xpath.field.expression" value="@TableDescription"/>
+		<fieldDescription><![CDATA[@TableDescription]]></fieldDescription>
+	</field>
+	<field name="TableNumber" class="java.lang.Integer">
+		<property name="net.sf.jasperreports.xpath.field.expression" value="@TableNumber"/>
+		<fieldDescription><![CDATA[@TableNumber]]></fieldDescription>
+	</field>
+	<field name="TableType" class="java.lang.String">
+		<property name="net.sf.jasperreports.xpath.field.expression" value="@TableType"/>
+		<fieldDescription><![CDATA[@TableType]]></fieldDescription>
+	</field>
+	<field name="ReportElementOrder" class="java.lang.Integer">
+		<property name="net.sf.jasperreports.xpath.field.expression" value="ancestor::Report_Element/@ReportElementOrder"/>
+		<fieldDescription><![CDATA[ancestor::Report_Element/@ReportElementOrder]]></fieldDescription>
+	</field>
+	<field name="Element" class="java.lang.String">
+		<property name="net.sf.jasperreports.xpath.field.expression" value="ancestor::Report_Element/@Element"/>
+		<fieldDescription><![CDATA[ancestor::Report_Element/@Element]]></fieldDescription>
+	</field>
+	<filterExpression><![CDATA[$F{ReportElementOrder}==$P{p_ReportElementOrder}]]></filterExpression>
+	<group name="FigureNumber">
+		<groupExpression><![CDATA[$F{TableNumber}]]></groupExpression>
+		<groupFooter>
+			<band height="2">
+				<printWhenExpression><![CDATA[1==1]]></printWhenExpression>
+				<subreport>
+					<reportElement positionType="Float" x="0" y="1" width="468" height="1" uuid="fcbcd3ca-fa63-4092-8520-363518be879a">
+						<property name="com.jaspersoft.studio.unit.width" value="px"/>
+						<property name="com.jaspersoft.studio.unit.height" value="px"/>
+					</reportElement>
+					<subreportParameter name="p_ReportElementOrder">
+						<subreportParameterExpression><![CDATA[$F{ReportElementOrder}]]></subreportParameterExpression>
+					</subreportParameter>
+					<subreportParameter name="p_TableNumber">
+						<subreportParameterExpression><![CDATA[$F{TableNumber}]]></subreportParameterExpression>
+					</subreportParameter>
+					<subreportParameter name="XML_DATA_DOCUMENT">
+						<subreportParameterExpression><![CDATA[$P{XML_DATA_DOCUMENT}]]></subreportParameterExpression>
+					</subreportParameter>
+					<subreportParameter name="p_TableType">
+						<subreportParameterExpression><![CDATA[$F{TableType}]]></subreportParameterExpression>
+					</subreportParameter>
+					<connectionExpression><![CDATA[$P{REPORT_CONNECTION}]]></connectionExpression>
+					<subreportExpression><![CDATA[$P{REPORT_DIR} + "\JasperC\12_Column_Control_Point_Tables_Subreport.jasper"]]></subreportExpression>
+				</subreport>
+			</band>
+		</groupFooter>
+	</group>
+	<background>
+		<band splitType="Stretch">
+			<property name="com.jaspersoft.studio.unit.height" value="pixel"/>
+		</band>
+	</background>
+	<title>
+		<band splitType="Stretch">
+			<printWhenExpression><![CDATA[1==0]]></printWhenExpression>
+		</band>
+	</title>
+	<pageHeader>
+		<band splitType="Stretch">
+			<property name="com.jaspersoft.studio.unit.height" value="px"/>
+		</band>
+	</pageHeader>
+	<columnHeader>
+		<band splitType="Stretch"/>
+	</columnHeader>
+	<detail>
+		<band splitType="Stretch"/>
+	</detail>
+	<columnFooter>
+		<band splitType="Stretch">
+			<property name="com.jaspersoft.studio.unit.height" value="px"/>
+			<printWhenExpression><![CDATA[1==0]]></printWhenExpression>
+		</band>
+	</columnFooter>
+	<pageFooter>
+		<band splitType="Stretch">
+			<property name="com.jaspersoft.studio.unit.height" value="px"/>
+		</band>
+	</pageFooter>
+	<summary>
+		<band splitType="Stretch"/>
+	</summary>
+</jasperReport>

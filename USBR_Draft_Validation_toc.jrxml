@@ -1,0 +1,264 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- Created with Jaspersoft Studio version 6.17.0.final using JasperReports Library version 6.17.0-6d93193241dd8cc42629e188b94f9e0bc5722efd  -->
+<jasperReport xmlns="http://jasperreports.sourceforge.net/jasperreports" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://jasperreports.sourceforge.net/jasperreports http://jasperreports.sourceforge.net/xsd/jasperreport.xsd" name="USBR_Draft_Validation_toc" language="groovy" pageWidth="612" pageHeight="792" whenNoDataType="AllSectionsNoDetail" columnWidth="468" leftMargin="72" rightMargin="72" topMargin="72" bottomMargin="72" uuid="2f285723-e7fb-47ce-910a-e54a75215012">
+	<property name="com.jaspersoft.studio.data.defaultdataadapter" value="TocData"/>
+	<style name="Title" hTextAlign="Right" hImageAlign="Right" fontSize="32">
+		<box>
+			<topPen lineWidth="1.0"/>
+		</box>
+	</style>
+	<style name="Heading1" fontSize="16" isBold="true">
+		<box>
+			<bottomPen lineWidth="0.5" lineStyle="Dashed"/>
+		</box>
+	</style>
+	<style name="HeadingLabel1" style="Heading1"/>
+	<style name="HeadingIndex1" style="Heading1"/>
+	<style name="Heading2" fontSize="16">
+		<box>
+			<bottomPen lineWidth="0.5" lineStyle="Dashed"/>
+		</box>
+	</style>
+	<style name="HeadingLabel2" style="Heading2"/>
+	<style name="HeadingIndex2" style="Heading2"/>
+	<style name="Heading3" fontSize="12">
+		<box>
+			<bottomPen lineWidth="0.0" lineStyle="Dashed"/>
+		</box>
+	</style>
+	<style name="HeadingLabel3" style="Heading3"/>
+	<style name="HeadingIndex3" style="Heading3"/>
+	<parameter name="REPORT_DIR" class="java.lang.String" isForPrompting="false">
+		<defaultValueExpression><![CDATA["Reports\"]]></defaultValueExpression>
+	</parameter>
+	<parameter name="simulationName" class="java.lang.String"/>
+	<parameter name="watershedName" class="java.lang.String" isForPrompting="false"/>
+	<parameter name="printHeaderAndFooter" class="java.lang.Boolean" isForPrompting="false">
+		<defaultValueExpression><![CDATA[TRUE( )]]></defaultValueExpression>
+	</parameter>
+	<queryString>
+		<![CDATA[]]>
+	</queryString>
+	<field name="level" class="java.lang.Integer"/>
+	<field name="label" class="java.lang.String"/>
+	<field name="pageIndex" class="java.lang.Integer"/>
+	<variable name="level2Index" class="java.lang.Integer">
+		<variableExpression><![CDATA[$F{level} == 1 ? 0 : ($F{level} == 2 ? ($V{level2Index} + 1) : $V{level2Index})]]></variableExpression>
+	</variable>
+	<background>
+		<band splitType="Stretch"/>
+	</background>
+	<pageHeader>
+		<band height="68">
+			<textField textAdjust="StretchHeight">
+				<reportElement style="Title" x="0" y="28" width="468" height="40" forecolor="#2F5496" uuid="84ab850e-6c31-4d09-9e32-25257fddb692">
+					<property name="local_mesure_unitwidth" value="pixel"/>
+					<property name="com.jaspersoft.studio.unit.width" value="px"/>
+				</reportElement>
+				<box>
+					<topPen lineWidth="0.0" lineColor="#A0D042"/>
+				</box>
+				<textElement textAlignment="Left">
+					<font fontName="Segoe UI" size="20" isBold="true"/>
+				</textElement>
+				<textFieldExpression><![CDATA["TABLE OF CONTENTS"]]></textFieldExpression>
+			</textField>
+			<textField textAdjust="StretchHeight">
+				<reportElement x="0" y="0" width="234" height="28" uuid="0ba853ae-12b7-49b2-893c-b14dcf51ecb6">
+					<property name="com.jaspersoft.studio.unit.height" value="px"/>
+					<property name="com.jaspersoft.studio.unit.width" value="px"/>
+					<printWhenExpression><![CDATA[$P{printHeaderAndFooter}==TRUE()]]></printWhenExpression>
+				</reportElement>
+				<textElement textAlignment="Left">
+					<font fontName="Segoe UI"/>
+				</textElement>
+				<textFieldExpression><![CDATA["USBR Draft Validation, \nProject: "+$P{watershedName}]]></textFieldExpression>
+			</textField>
+			<textField textAdjust="StretchHeight">
+				<reportElement x="234" y="0" width="234" height="28" uuid="1c573599-57af-42bc-8e18-f995c7f7f51f">
+					<property name="com.jaspersoft.studio.unit.height" value="px"/>
+					<printWhenExpression><![CDATA[$P{printHeaderAndFooter}==TRUE()]]></printWhenExpression>
+				</reportElement>
+				<textElement textAlignment="Right">
+					<font fontName="Segoe UI"/>
+				</textElement>
+				<textFieldExpression><![CDATA["Report Date: " + new SimpleDateFormat("MMMM dd, yyyy").format(new Date()) + "Simulation: " + $P{simulationName}]]></textFieldExpression>
+			</textField>
+		</band>
+	</pageHeader>
+	<detail>
+		<band height="22" splitType="Stretch">
+			<property name="local_mesure_unitheight" value="pixel"/>
+			<property name="com.jaspersoft.studio.unit.height" value="px"/>
+			<printWhenExpression><![CDATA[$F{level} == 1]]></printWhenExpression>
+			<textField textAdjust="StretchHeight" hyperlinkType="LocalAnchor">
+				<reportElement style="HeadingLabel1" stretchType="ElementGroupHeight" x="0" y="0" width="423" height="22" uuid="379fcff2-021d-4761-a89a-eeb772723b1b">
+					<property name="local_mesure_unitheight" value="pixel"/>
+					<property name="local_mesure_unity" value="pixel"/>
+					<property name="com.jaspersoft.studio.unit.y" value="px"/>
+					<property name="com.jaspersoft.studio.unit.height" value="px"/>
+				</reportElement>
+				<textElement markup="styled">
+					<font fontName="Segoe UI" size="16" isBold="false"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{label}]]></textFieldExpression>
+				<hyperlinkAnchorExpression><![CDATA[$F{label}]]></hyperlinkAnchorExpression>
+			</textField>
+			<textField textAdjust="StretchHeight" evaluationTime="Auto" hyperlinkType="LocalAnchor">
+				<reportElement style="HeadingIndex1" stretchType="ElementGroupHeight" x="423" y="0" width="45" height="22" uuid="a31e80f3-f1fa-4643-adbe-77a61c7b9051">
+					<property name="local_mesure_unitheight" value="pixel"/>
+					<property name="com.jaspersoft.studio.unit.y" value="px"/>
+					<property name="com.jaspersoft.studio.unit.height" value="px"/>
+				</reportElement>
+				<textElement textAlignment="Right" verticalAlignment="Bottom">
+					<font fontName="Segoe UI" isBold="false"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$V{PAGE_NUMBER} + $F{pageIndex}]]></textFieldExpression>
+				<hyperlinkAnchorExpression><![CDATA[$F{label}]]></hyperlinkAnchorExpression>
+			</textField>
+		</band>
+		<band height="25" splitType="Stretch">
+			<property name="local_mesure_unitheight" value="pixel"/>
+			<property name="com.jaspersoft.studio.unit.height" value="px"/>
+			<printWhenExpression><![CDATA[$F{level} == 2]]></printWhenExpression>
+			<textField textAdjust="StretchHeight" isBlankWhenNull="true" hyperlinkType="LocalAnchor">
+				<reportElement style="HeadingLabel2" stretchType="ElementGroupHeight" x="21" y="5" width="402" height="20" uuid="379fcff2-021d-4761-a89a-eeb772723b1b">
+					<property name="local_mesure_unitheight" value="pixel"/>
+					<property name="com.jaspersoft.studio.unit.height" value="px"/>
+					<property name="com.jaspersoft.studio.unit.y" value="px"/>
+				</reportElement>
+				<textElement markup="styled">
+					<font fontName="Segoe UI" size="14"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{label}]]></textFieldExpression>
+				<hyperlinkAnchorExpression><![CDATA[$F{label}]]></hyperlinkAnchorExpression>
+			</textField>
+			<textField textAdjust="StretchHeight" evaluationTime="Auto" isBlankWhenNull="true" hyperlinkType="LocalAnchor">
+				<reportElement style="HeadingIndex2" stretchType="ElementGroupHeight" x="423" y="5" width="45" height="20" uuid="a31e80f3-f1fa-4643-adbe-77a61c7b9051">
+					<property name="local_mesure_unitheight" value="pixel"/>
+					<property name="com.jaspersoft.studio.unit.height" value="px"/>
+					<property name="com.jaspersoft.studio.unit.y" value="px"/>
+				</reportElement>
+				<textElement textAlignment="Right" verticalAlignment="Bottom">
+					<font fontName="Segoe UI" size="14"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$V{PAGE_NUMBER} + $F{pageIndex}]]></textFieldExpression>
+				<hyperlinkAnchorExpression><![CDATA[$F{label}]]></hyperlinkAnchorExpression>
+			</textField>
+		</band>
+	</detail>
+	<pageFooter>
+		<band height="20">
+			<printWhenExpression><![CDATA[$P{printHeaderAndFooter}==TRUE()]]></printWhenExpression>
+			<textField textAdjust="StretchHeight" evaluationTime="Master">
+				<reportElement x="0" y="0" width="468" height="20" uuid="69c2d88b-8043-43f5-b650-12dd00c07201">
+					<property name="com.jaspersoft.studio.unit.height" value="px"/>
+				</reportElement>
+				<textElement textAlignment="Center">
+					<font fontName="Segoe UI"/>
+				</textElement>
+				<textFieldExpression><![CDATA[($V{MASTER_CURRENT_PAGE}-1==0?"0":"")+
+($V{MASTER_CURRENT_PAGE}-1==1?"i":"")+
+($V{MASTER_CURRENT_PAGE}-1==2?"ii":"")+
+($V{MASTER_CURRENT_PAGE}-1==3?"iii":"")+
+($V{MASTER_CURRENT_PAGE}-1==4?"iv":"")+
+($V{MASTER_CURRENT_PAGE}-1==5?"v":"")+
+($V{MASTER_CURRENT_PAGE}-1==6?"vi":"")+
+($V{MASTER_CURRENT_PAGE}-1==7?"vii":"")+
+($V{MASTER_CURRENT_PAGE}-1==8?"viii":"")+
+($V{MASTER_CURRENT_PAGE}-1==9?"ix":"")+
+($V{MASTER_CURRENT_PAGE}-1==10?"x":"")+
+($V{MASTER_CURRENT_PAGE}-1==11?"xi":"")+
+($V{MASTER_CURRENT_PAGE}-1==12?"xii":"")+
+($V{MASTER_CURRENT_PAGE}-1==13?"xiii":"")+
+($V{MASTER_CURRENT_PAGE}-1==14?"xiv":"")+
+($V{MASTER_CURRENT_PAGE}-1==15?"xv":"")+
+($V{MASTER_CURRENT_PAGE}-1==16?"xvi":"")+
+($V{MASTER_CURRENT_PAGE}-1==17?"xvii":"")+
+($V{MASTER_CURRENT_PAGE}-1==18?"xviii":"")+
+($V{MASTER_CURRENT_PAGE}-1==19?"xix":"")+
+($V{MASTER_CURRENT_PAGE}-1==20?"xx":"")+
+($V{MASTER_CURRENT_PAGE}-1==21?"xxi":"")+
+($V{MASTER_CURRENT_PAGE}-1==22?"xxii":"")+
+($V{MASTER_CURRENT_PAGE}-1==23?"xxiii":"")+
+($V{MASTER_CURRENT_PAGE}-1==24?"xxiv":"")+
+($V{MASTER_CURRENT_PAGE}-1==25?"xxv":"")+
+($V{MASTER_CURRENT_PAGE}-1==26?"xxvi":"")+
+($V{MASTER_CURRENT_PAGE}-1==27?"xxvii":"")+
+($V{MASTER_CURRENT_PAGE}-1==28?"xxviii":"")+
+($V{MASTER_CURRENT_PAGE}-1==29?"xxix":"")+
+($V{MASTER_CURRENT_PAGE}-1==30?"xxx":"")+
+($V{MASTER_CURRENT_PAGE}-1==31?"xxxi":"")+
+($V{MASTER_CURRENT_PAGE}-1==32?"xxxii":"")+
+($V{MASTER_CURRENT_PAGE}-1==33?"xxxiii":"")+
+($V{MASTER_CURRENT_PAGE}-1==34?"xxxiv":"")+
+($V{MASTER_CURRENT_PAGE}-1==35?"xxxv":"")+
+($V{MASTER_CURRENT_PAGE}-1==36?"xxxvi":"")+
+($V{MASTER_CURRENT_PAGE}-1==37?"xxxvii":"")+
+($V{MASTER_CURRENT_PAGE}-1==38?"xxxviii":"")+
+($V{MASTER_CURRENT_PAGE}-1==39?"xxxix":"")+
+($V{MASTER_CURRENT_PAGE}-1==40?"xl":"")+
+($V{MASTER_CURRENT_PAGE}-1==41?"xli":"")+
+($V{MASTER_CURRENT_PAGE}-1==42?"xlii":"")+
+($V{MASTER_CURRENT_PAGE}-1==43?"xliii":"")+
+($V{MASTER_CURRENT_PAGE}-1==44?"xliv":"")+
+($V{MASTER_CURRENT_PAGE}-1==45?"xlv":"")+
+($V{MASTER_CURRENT_PAGE}-1==46?"xlvi":"")+
+($V{MASTER_CURRENT_PAGE}-1==47?"xlvii":"")+
+($V{MASTER_CURRENT_PAGE}-1==48?"xlviii":"")+
+($V{MASTER_CURRENT_PAGE}-1==49?"xlix":"")+
+($V{MASTER_CURRENT_PAGE}-1==50?"l":"")+
+($V{MASTER_CURRENT_PAGE}-1==51?"li":"")+
+($V{MASTER_CURRENT_PAGE}-1==52?"lii":"")+
+($V{MASTER_CURRENT_PAGE}-1==53?"liii":"")+
+($V{MASTER_CURRENT_PAGE}-1==54?"liv":"")+
+($V{MASTER_CURRENT_PAGE}-1==55?"lv":"")+
+($V{MASTER_CURRENT_PAGE}-1==56?"lvi":"")+
+($V{MASTER_CURRENT_PAGE}-1==57?"lvii":"")+
+($V{MASTER_CURRENT_PAGE}-1==58?"lviii":"")+
+($V{MASTER_CURRENT_PAGE}-1==59?"lix":"")+
+($V{MASTER_CURRENT_PAGE}-1==60?"lx":"")+
+($V{MASTER_CURRENT_PAGE}-1==61?"lxi":"")+
+($V{MASTER_CURRENT_PAGE}-1==62?"lxii":"")+
+($V{MASTER_CURRENT_PAGE}-1==63?"lxiii":"")+
+($V{MASTER_CURRENT_PAGE}-1==64?"lxiv":"")+
+($V{MASTER_CURRENT_PAGE}-1==65?"lxv":"")+
+($V{MASTER_CURRENT_PAGE}-1==66?"lxvi":"")+
+($V{MASTER_CURRENT_PAGE}-1==67?"lxvii":"")+
+($V{MASTER_CURRENT_PAGE}-1==68?"lxviii":"")+
+($V{MASTER_CURRENT_PAGE}-1==69?"lxix":"")+
+($V{MASTER_CURRENT_PAGE}-1==70?"lxx":"")+
+($V{MASTER_CURRENT_PAGE}-1==71?"lxxi":"")+
+($V{MASTER_CURRENT_PAGE}-1==72?"lxxii":"")+
+($V{MASTER_CURRENT_PAGE}-1==73?"lxxiii":"")+
+($V{MASTER_CURRENT_PAGE}-1==74?"lxxiv":"")+
+($V{MASTER_CURRENT_PAGE}-1==75?"lxxv":"")+
+($V{MASTER_CURRENT_PAGE}-1==76?"lxxvi":"")+
+($V{MASTER_CURRENT_PAGE}-1==77?"lxxvii":"")+
+($V{MASTER_CURRENT_PAGE}-1==78?"lxxviii":"")+
+($V{MASTER_CURRENT_PAGE}-1==79?"lxxix":"")+
+($V{MASTER_CURRENT_PAGE}-1==80?"lxxx":"")+
+($V{MASTER_CURRENT_PAGE}-1==81?"lxxxi":"")+
+($V{MASTER_CURRENT_PAGE}-1==82?"lxxxii":"")+
+($V{MASTER_CURRENT_PAGE}-1==83?"lxxxiii":"")+
+($V{MASTER_CURRENT_PAGE}-1==84?"lxxxiv":"")+
+($V{MASTER_CURRENT_PAGE}-1==85?"lxxxv":"")+
+($V{MASTER_CURRENT_PAGE}-1==86?"lxxxvi":"")+
+($V{MASTER_CURRENT_PAGE}-1==87?"lxxxvii":"")+
+($V{MASTER_CURRENT_PAGE}-1==88?"lxxxviii":"")+
+($V{MASTER_CURRENT_PAGE}-1==89?"lxxxix":"")+
+($V{MASTER_CURRENT_PAGE}-1==90?"xc":"")+
+($V{MASTER_CURRENT_PAGE}-1==91?"xci":"")+
+($V{MASTER_CURRENT_PAGE}-1==92?"xcii":"")+
+($V{MASTER_CURRENT_PAGE}-1==93?"xciii":"")+
+($V{MASTER_CURRENT_PAGE}-1==94?"xciv":"")+
+($V{MASTER_CURRENT_PAGE}-1==95?"xcv":"")+
+($V{MASTER_CURRENT_PAGE}-1==96?"xcvi":"")+
+($V{MASTER_CURRENT_PAGE}-1==97?"xcvii":"")+
+($V{MASTER_CURRENT_PAGE}-1==98?"xcviii":"")+
+($V{MASTER_CURRENT_PAGE}-1==99?"xcix":"")+
+($V{MASTER_CURRENT_PAGE}-1==100?"c":"")]]></textFieldExpression>
+			</textField>
+		</band>
+	</pageFooter>
+</jasperReport>

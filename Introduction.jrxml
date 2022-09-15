@@ -1,0 +1,129 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- Created with Jaspersoft Studio version 6.11.0.final using JasperReports Library version 6.11.0-0c4056ccaa4d25a5a8c45672d2f764ea3498bebb  -->
+<jasperReport xmlns="http://jasperreports.sourceforge.net/jasperreports" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://jasperreports.sourceforge.net/jasperreports http://jasperreports.sourceforge.net/xsd/jasperreport.xsd" name="Introduction" language="groovy" pageWidth="468" pageHeight="648" columnWidth="468" leftMargin="0" rightMargin="0" topMargin="0" bottomMargin="0" uuid="fcf9eeac-5234-4e12-a7c5-a60d743390e6">
+	<property name="net.sf.jasperreports.data.adapter" value="..\Datasources\USBRAutomatedReportDataAdapter.xml"/>
+	<property name="com.jaspersoft.studio.report.description" value=""/>
+	<property name="com.jaspersoft.studio.data.defaultdataadapter" value="USBRAutomatedReportOutput"/>
+	<property name="com.jaspersoft.studio.unit.pageHeight" value="inch"/>
+	<property name="com.jaspersoft.studio.unit.pageWidth" value="inch"/>
+	<parameter name="watershedName" class="java.lang.String" isForPrompting="false"/>
+	<parameter name="simulationName" class="java.lang.String" isForPrompting="false"/>
+	<parameter name="simulationDate" class="java.lang.String" isForPrompting="false"/>
+	<parameter name="analysisStartTime" class="java.lang.String" isForPrompting="false"/>
+	<parameter name="analysisEndTime" class="java.lang.String" isForPrompting="false"/>	<parameter name="REPORT_DIR" class="java.lang.String" isForPrompting="false">
+		<defaultValueExpression><![CDATA["Reports\"]]></defaultValueExpression>
+	</parameter>
+	<queryString language="xPath">
+		<![CDATA[/USBR_Automated_Report/Report_Group/Report_Subgroup/Report_Element/Model]]>
+	</queryString>
+	<field name="Model" class="java.lang.String">
+		<property name="net.sf.jasperreports.xpath.field.expression" value="."/>
+		<fieldDescription><![CDATA[.]]></fieldDescription>
+	</field>
+	<field name="ModelOrder" class="java.lang.Integer">
+		<property name="net.sf.jasperreports.xpath.field.expression" value="@ModelOrder"/>
+		<fieldDescription><![CDATA[@ModelOrder]]></fieldDescription>
+	</field>
+	<background>
+		<band splitType="Stretch"/>
+	</background>
+	<title>
+		<band splitType="Stretch">
+			<printWhenExpression><![CDATA[1==0]]></printWhenExpression>
+		</band>
+	</title>
+	<pageHeader>
+		<band splitType="Stretch">
+			<property name="com.jaspersoft.studio.unit.height" value="px"/>
+		</band>
+	</pageHeader>
+	<columnHeader>
+		<band height="75" splitType="Stretch">
+			<property name="com.jaspersoft.studio.unit.height" value="px"/>
+			<textField textAdjust="StretchHeight">
+				<reportElement positionType="Float" x="0" y="0" width="468" height="15" uuid="7feaa16d-27d6-4937-ad1d-6cade9c20873">
+					<property name="com.jaspersoft.studio.unit.height" value="px"/>
+				</reportElement>
+				<textElement markup="styled"/>
+				<textFieldExpression><![CDATA["This report presents an overview of temperature model validation results for the following conditions."]]></textFieldExpression>
+			</textField>
+			<textField textAdjust="StretchHeight">
+				<reportElement positionType="Float" x="0" y="30" width="468" height="15" uuid="cdb928af-d2fc-4377-be76-3002604e9ab6">
+					<property name="com.jaspersoft.studio.unit.height" value="px"/>
+					<property name="com.jaspersoft.studio.unit.width" value="px"/>
+				</reportElement>
+				<textElement markup="styled"/>
+				<textFieldExpression><![CDATA["Simulation: " + $P{simulationName}]]></textFieldExpression>
+			</textField>
+			<textField textAdjust="StretchHeight">
+				<reportElement positionType="Float" x="0" y="45" width="468" height="15" uuid="4c2b3c8d-bc87-4c6b-bb3c-5599bbe86106">
+					<property name="com.jaspersoft.studio.unit.height" value="px"/>
+				</reportElement>
+				<textElement markup="styled"/>
+				<textFieldExpression><![CDATA["Analysis Period: " + $P{analysisStartTime} + " to " + $P{analysisEndTime}]]></textFieldExpression>
+			</textField>
+			<textField textAdjust="StretchHeight">
+				<reportElement positionType="Float" x="0" y="60" width="468" height="15" uuid="bc9ab218-f04e-4e72-9903-e2c830684ef8">
+					<property name="com.jaspersoft.studio.unit.height" value="px"/>
+				</reportElement>
+				<textElement markup="styled"/>
+				<textFieldExpression><![CDATA["Models:"]]></textFieldExpression>
+			</textField>
+			<textField textAdjust="StretchHeight">
+				<reportElement positionType="Float" x="0" y="15" width="468" height="15" uuid="f9fde726-dec0-43aa-a288-309bd56fcf62">
+					<property name="com.jaspersoft.studio.unit.height" value="px"/>
+				</reportElement>
+				<textElement markup="styled"/>
+				<textFieldExpression><![CDATA["Project: " + $P{watershedName}]]></textFieldExpression>
+			</textField>
+		</band>
+	</columnHeader>
+	<detail>
+		<band height="15" splitType="Stretch">
+			<property name="com.jaspersoft.studio.unit.height" value="px"/>
+			<textField textAdjust="StretchHeight">
+				<reportElement positionType="Float" x="30" y="0" width="438" height="15" uuid="01894687-d9b9-4c16-9efa-7c5e2ca93654">
+					<property name="com.jaspersoft.studio.unit.height" value="px"/>
+					<property name="com.jaspersoft.studio.unit.width" value="px"/>
+				</reportElement>
+				<textElement markup="styled"/>
+				<textFieldExpression><![CDATA[$F{Model}]]></textFieldExpression>
+			</textField>
+		</band>
+	</detail>
+	<columnFooter>
+		<band splitType="Stretch">
+			<property name="com.jaspersoft.studio.unit.height" value="px"/>
+			<printWhenExpression><![CDATA[1==0]]></printWhenExpression>
+		</band>
+	</columnFooter>
+	<pageFooter>
+		<band splitType="Stretch">
+			<property name="com.jaspersoft.studio.unit.height" value="px"/>
+		</band>
+	</pageFooter>
+	<summary>
+		<band height="42" splitType="Stretch">
+			<property name="com.jaspersoft.studio.unit.height" value="px"/>
+			<textField textAdjust="StretchHeight">
+				<reportElement positionType="Float" x="0" y="15" width="468" height="15" uuid="ccf093c6-3347-4105-97c0-db608c544b0c">
+					<property name="com.jaspersoft.studio.unit.height" value="px"/>
+				</reportElement>
+				<textElement markup="styled"/>
+				<textFieldExpression><![CDATA["Report Date: " + new SimpleDateFormat("MMMM dd, yyyy").format(new Date())]]></textFieldExpression>
+			</textField>
+			<textField textAdjust="StretchHeight">
+				<reportElement positionType="Float" x="0" y="0" width="468" height="15" uuid="077d6f3f-d402-4b84-b603-39cbfef28025">
+					<property name="com.jaspersoft.studio.unit.height" value="px"/>
+				</reportElement>
+				<textElement markup="styled"/>
+				<textFieldExpression><![CDATA["Simulation Date: " + $P{simulationDate}]]></textFieldExpression>
+			</textField>
+			<break>
+				<reportElement x="0" y="41" width="469" height="1" uuid="d82855d1-57a2-4c3f-996e-a627eeef253a">
+					<property name="com.jaspersoft.studio.unit.width" value="px"/>
+				</reportElement>
+			</break>
+		</band>
+	</summary>
+</jasperReport>

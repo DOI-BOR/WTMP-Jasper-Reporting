@@ -1,0 +1,122 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- Created with Jaspersoft Studio version 6.11.0.final using JasperReports Library version 6.11.0-0c4056ccaa4d25a5a8c45672d2f764ea3498bebb  -->
+<jasperReport xmlns="http://jasperreports.sourceforge.net/jasperreports" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://jasperreports.sourceforge.net/jasperreports http://jasperreports.sourceforge.net/xsd/jasperreport.xsd" name="Reservoir_Profile_Subreport" language="groovy" pageWidth="468" pageHeight="648" columnWidth="468" leftMargin="0" rightMargin="0" topMargin="0" bottomMargin="0" uuid="127f2104-c03a-478b-b43f-003f6e814e84">
+	<property name="com.jaspersoft.studio.report.description" value=""/>
+	<property name="net.sf.jasperreports.data.adapter" value="..\Datasources\USBRAutomatedReportDataAdapter.xml"/>
+	<property name="com.jaspersoft.studio.unit." value="pixel"/>
+	<property name="com.jaspersoft.studio.unit.pageHeight" value="inch"/>
+	<property name="com.jaspersoft.studio.unit.pageWidth" value="inch"/>
+	<property name="com.jaspersoft.studio.unit.topMargin" value="pixel"/>
+	<property name="com.jaspersoft.studio.unit.bottomMargin" value="pixel"/>
+	<property name="com.jaspersoft.studio.unit.leftMargin" value="pixel"/>
+	<property name="com.jaspersoft.studio.unit.rightMargin" value="pixel"/>
+	<property name="com.jaspersoft.studio.unit.columnWidth" value="pixel"/>
+	<property name="com.jaspersoft.studio.unit.columnSpacing" value="pixel"/>
+	<parameter name="p_Reservoir" class="java.lang.String" isForPrompting="false">
+		<defaultValueExpression><![CDATA["Shasta"]]></defaultValueExpression>
+	</parameter>	<parameter name="REPORT_DIR" class="java.lang.String" isForPrompting="false">
+		<defaultValueExpression><![CDATA["Reports\"]]></defaultValueExpression>
+	</parameter>
+	<parameter name="p_FigureNumber" class="java.lang.Integer" isForPrompting="false">
+		<defaultValueExpression><![CDATA[1]]></defaultValueExpression>
+	</parameter>
+	<parameter name="p_FigureDescription" class="java.lang.String" isForPrompting="false">
+		<defaultValueExpression><![CDATA["Description of Figure 1 Goes Here"]]></defaultValueExpression>
+	</parameter>
+	<parameter name="p_ProfileImage" class="java.lang.String" isForPrompting="false">
+		<defaultValueExpression><![CDATA["Shasta_Temperature_2013_00.png"]]></defaultValueExpression>
+	</parameter>
+	<queryString language="xPath">
+		<![CDATA[/USBR_Automated_Report/Report_Group/Report_Subgroup/Report_Element/Reservoir_Profiles/Profile_Image]]>
+	</queryString>
+	<field name="Profile_Image" class="java.lang.String">
+		<property name="net.sf.jasperreports.xpath.field.expression" value="."/>
+		<fieldDescription><![CDATA[.]]></fieldDescription>
+	</field>
+	<field name="FigureDescription" class="java.lang.String">
+		<property name="net.sf.jasperreports.xpath.field.expression" value="@FigureDescription"/>
+		<fieldDescription><![CDATA[@FigureDescription]]></fieldDescription>
+	</field>
+	<field name="FigureNumber" class="java.lang.Integer">
+		<property name="net.sf.jasperreports.xpath.field.expression" value="@FigureNumber"/>
+		<fieldDescription><![CDATA[@FigureNumber]]></fieldDescription>
+	</field>
+	<field name="Reservoir" class="java.lang.String">
+		<property name="net.sf.jasperreports.xpath.field.expression" value="ancestor::Reservoir_Profiles/@Reservoir"/>
+		<fieldDescription><![CDATA[ancestor::Reservoir_Profiles/@Reservoir]]></fieldDescription>
+	</field>
+	<field name="ReportElementOrder" class="java.lang.String">
+		<property name="net.sf.jasperreports.xpath.field.expression" value="ancestor::Report_Element/@ReportElementOrder"/>
+		<fieldDescription><![CDATA[ancestor::Report_Element/@ReportElementOrder]]></fieldDescription>
+	</field>
+	<field name="Element" class="java.lang.String">
+		<property name="net.sf.jasperreports.xpath.field.expression" value="ancestor::Report_Element/@Element"/>
+		<fieldDescription><![CDATA[ancestor::Report_Element/@Element]]></fieldDescription>
+	</field>
+	<field name="ReportGroupOrder" class="java.lang.Integer">
+		<property name="net.sf.jasperreports.xpath.field.expression" value="ancestor::Report_Group/@ReportGroupOrder"/>
+		<fieldDescription><![CDATA[ancestor::Report_Group/@ReportGroupOrder]]></fieldDescription>
+	</field>
+	<field name="ReportGroupName" class="java.lang.String">
+		<property name="net.sf.jasperreports.xpath.field.expression" value="ancestor::Report_Group/@ReportGroupName"/>
+		<fieldDescription><![CDATA[ancestor::Report_Group/@ReportGroupName]]></fieldDescription>
+	</field>
+	<filterExpression><![CDATA[$P{p_FigureNumber}==$F{FigureNumber}]]></filterExpression>
+	<background>
+		<band splitType="Stretch"/>
+	</background>
+	<title>
+		<band splitType="Stretch">
+			<printWhenExpression><![CDATA[1==0]]></printWhenExpression>
+		</band>
+	</title>
+	<pageHeader>
+		<band splitType="Stretch">
+			<printWhenExpression><![CDATA[1==0]]></printWhenExpression>
+		</band>
+	</pageHeader>
+	<columnHeader>
+		<band splitType="Stretch"/>
+	</columnHeader>
+	<detail>
+		<band splitType="Stretch"/>
+	</detail>
+	<columnFooter>
+		<band splitType="Stretch">
+			<property name="com.jaspersoft.studio.unit.height" value="px"/>
+			<printWhenExpression><![CDATA[1==0]]></printWhenExpression>
+		</band>
+	</columnFooter>
+	<pageFooter>
+		<band splitType="Stretch"/>
+	</pageFooter>
+	<summary>
+		<band height="503" splitType="Stretch">
+			<property name="com.jaspersoft.studio.unit.height" value="px"/>
+			<textField textAdjust="StretchHeight" bookmarkLevel="3">
+				<reportElement x="1" y="501" width="466" height="1" uuid="aedffe87-e78e-4ddb-908b-ec98e0424fbf">
+					<property name="com.jaspersoft.studio.unit.y" value="px"/>
+					<property name="com.jaspersoft.studio.unit.height" value="px"/>
+				</reportElement>
+				<textElement>
+					<font isBold="true"/>
+				</textElement>
+				<textFieldExpression><![CDATA["Figure "+$P{p_FigureNumber}+". "+$P{p_FigureDescription}]]></textFieldExpression>
+				<anchorNameExpression><![CDATA["Figure "+$P{p_FigureNumber}+". "+$P{p_FigureDescription}]]></anchorNameExpression>
+			</textField>
+			<image scaleImage="RetainShape">
+				<reportElement x="0" y="0" width="468" height="500" uuid="a11056c3-2ae1-49f2-b5f5-3ec9e59f41f0">
+					<property name="com.jaspersoft.studio.unit.height" value="px"/>
+					<property name="com.jaspersoft.studio.unit.width" value="px"/>
+				</reportElement>
+				<imageExpression><![CDATA["Images/"+$F{Profile_Image}]]></imageExpression>
+			</image>
+			<break>
+				<reportElement positionType="Float" x="0" y="502" width="468" height="1" uuid="e9fef97b-06d5-4ae0-9c13-1f07bf4018d1">
+					<property name="com.jaspersoft.studio.unit.width" value="px"/>
+					<property name="com.jaspersoft.studio.unit.y" value="px"/>
+				</reportElement>
+			</break>
+		</band>
+	</summary>
+</jasperReport>
