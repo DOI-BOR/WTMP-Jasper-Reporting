@@ -1,0 +1,16 @@
+<assembly>
+<formats>
+    <format>zip</format>
+</formats>
+
+<fileSets>
+    <fileSet>
+        <directory>.</directory>
+        <includes>
+            <include>**/*.jrxml</include>
+            <include>**/*.png</include>
+        </includes>
+        <outputDirectory>.</outputDirectory>
+    </fileSet>
+</fileSets>
+</assembly>
