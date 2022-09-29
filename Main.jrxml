@@ -3,8 +3,6 @@
 <jasperReport xmlns="http://jasperreports.sourceforge.net/jasperreports" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://jasperreports.sourceforge.net/jasperreports http://jasperreports.sourceforge.net/xsd/jasperreport.xsd" name="Main" language="groovy" pageWidth="612" pageHeight="792" columnWidth="468" leftMargin="72" rightMargin="72" topMargin="72" bottomMargin="72" uuid="127f2104-c03a-478b-b43f-003f6e814e84">
 	<property name="net.sf.jasperreports.data.adapter" value="USBRAutomatedReportDataAdapter.xml"/>
 	<property name="com.jaspersoft.studio.report.description" value=""/>
-	<property name="com.jaspersoft.studio.data.defaultdataadapter" value="USBRAutomatedReportOutput"/>
-<propertyExpression name="net.sf.jasperreports.data.adapter"><![CDATA[$P{DataAdapterLocation}]]></propertyExpression>
 	<parameter name="watershedName" class="java.lang.String" isForPrompting="false"/>
 	<parameter name="simulationName" class="java.lang.String" isForPrompting="false"/>
 	<parameter name="simulationDate" class="java.lang.String" isForPrompting="false"/>
@@ -13,9 +11,8 @@
 	<parameter name="printHeaderAndFooter" class="java.lang.String" isForPrompting="false">
 		<defaultValueExpression><![CDATA[TRUE( )]]></defaultValueExpression>
 	</parameter>
-	<parameter name="REPORT_DIR" class="java.lang.String" isForPrompting="false">
-		<defaultValueExpression><![CDATA["J:/USBR/watershed/american-wq\\reports\\JasperC\\"]]></defaultValueExpression>
-	</parameter>
+	<parameter name="REPORT_DIR" class="java.lang.String" isForPrompting="false"/>
+
 	<queryString language="xPath">
 		<![CDATA[/USBR_Automated_Report/Report_Group/Report_Subgroup/Report_Element]]>
 	</queryString>
@@ -167,7 +164,7 @@
 				<textElement textAlignment="Left">
 					<font fontName="Segoe UI"/>
 				</textElement>
-				<textFieldExpression><![CDATA["USBR Draft Validation, /nProject: "+$P{watershedName}]]></textFieldExpression>
+				<textFieldExpression><![CDATA["USBR Draft Validation, &#9094;Project: "+$P{watershedName}]]></textFieldExpression>
 			</textField>
 			<textField>
 				<reportElement x="234" y="0" width="234" height="28" uuid="864d303b-8f13-41fa-96e9-3f62912ea2e4">

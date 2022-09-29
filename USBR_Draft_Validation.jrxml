@@ -163,7 +163,7 @@
 				<subreportParameter name="REPORT_DIR">
 					<subreportParameterExpression><![CDATA[$P{REPORT_DIR}]]></subreportParameterExpression>
 				</subreportParameter>
-				<subreportExpression><![CDATA[$P{REPORT_DIR} + "\\JasperC\\Main.jasper"]]></subreportExpression>
+				<subreportExpression><![CDATA[$P{REPORT_DIR} + "Main.jasper"]]></subreportExpression>
 			</p:subreportPart>
 		</part>
 	</detail>
