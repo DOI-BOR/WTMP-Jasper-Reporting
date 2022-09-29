@@ -1,12 +1,11 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<!-- Created with Jaspersoft Studio version 6.17.0.final using JasperReports Library version 6.17.0-6d93193241dd8cc42629e188b94f9e0bc5722efd  -->
+<!-- Created with Jaspersoft Studio version 6.11.0.final using JasperReports Library version 6.11.0-0c4056ccaa4d25a5a8c45672d2f764ea3498bebb  -->
 <jasperReport xmlns="http://jasperreports.sourceforge.net/jasperreports" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://jasperreports.sourceforge.net/jasperreports http://jasperreports.sourceforge.net/xsd/jasperreport.xsd" name="USBR_Draft_Validation" language="groovy" pageWidth="595" pageHeight="842" sectionType="Part" columnWidth="555" leftMargin="20" rightMargin="20" topMargin="30" bottomMargin="30" uuid="d2716064-8ae4-40cf-a575-33afba400e3a">
 	<property name="net.sf.jasperreports.print.create.bookmarks" value="true"/>
 	<property name="com.jaspersoft.studio.book.group.cover.header" value="Cover and Table of Contents"/>
 	<property name="com.jaspersoft.studio.book.group.cover.footer" value="Backcover"/>
+	<property name="net.sf.jasperreports.data.adapter" value="USBRAutomatedReportDataAdapter.xml"/>
 	<property name="net.sf.jasperreports.export.docx.frames.as.nested.tables" value="false"/>
-	<property name="com.jaspersoft.studio.data.defaultdataadapter" value="USBRAutomatedReportOutput"/>
-<propertyExpression name="net.sf.jasperreports.data.adapter"><![CDATA[$P{DataAdapterLocation}]]></propertyExpression>
 	<parameter name="watershedName" class="java.lang.String" isForPrompting="false"/>
 	<parameter name="simulationName" class="java.lang.String" isForPrompting="false"/>
 	<parameter name="analysisStartTime" class="java.lang.String" isForPrompting="false"/>
@@ -15,11 +14,8 @@
 	<parameter name="printHeaderAndFooter" class="java.lang.Boolean" isForPrompting="false">
 		<defaultValueExpression><![CDATA[true]]></defaultValueExpression>
 	</parameter>
-	<parameter name="DataAdapterLocation" class="java.lang.String" evaluationTime="Early">
-		<defaultValueExpression><![CDATA["J\\USBR\\Shasta2RedBluff\\reports\\Datasources\\USBRAutomatedReportOutput.xml"]]></defaultValueExpression>
-	</parameter>
 	<parameter name="REPORT_DIR" class="java.lang.String" isForPrompting="false">
-		<defaultValueExpression><![CDATA["Reports/"]]></defaultValueExpression>
+		<defaultValueExpression><![CDATA["Reports\\"]]></defaultValueExpression>
 	</parameter>
 	<parameter name="Install_Dir" class="java.lang.String" isForPrompting="false"/>
 	<queryString language="XPath">
