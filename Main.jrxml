@@ -144,7 +144,7 @@
 						<subreportParameterExpression><![CDATA[$P{analysisEndTime}]]></subreportParameterExpression>
 					</subreportParameter>
 					<connectionExpression><![CDATA[$P{REPORT_CONNECTION}]]></connectionExpression>
-					<subreportExpression><![CDATA[$P{REPORT_DIR} + "/" + $F{Element}+".jasper"]]></subreportExpression>
+					<subreportExpression><![CDATA[$P{REPORT_DIR} + "/jasperC/" + $F{Element}+".jasper"]]></subreportExpression>
 				</subreport>
 			</band>
 		</groupFooter>
