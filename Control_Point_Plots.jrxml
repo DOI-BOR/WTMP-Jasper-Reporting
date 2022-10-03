@@ -14,9 +14,11 @@
 	<property name="com.jaspersoft.studio.unit.columnSpacing" value="pixel"/>
 	<parameter name="p_ReportElementOrder" class="java.lang.Integer" isForPrompting="false">
 		<defaultValueExpression><![CDATA[2]]></defaultValueExpression>
-	</parameter>	<parameter name="REPORT_DIR" class="java.lang.String" isForPrompting="false">
+	</parameter>
+	<parameter name="REPORT_DIR" class="java.lang.String" isForPrompting="false">
 		<defaultValueExpression><![CDATA["Reports\\"]]></defaultValueExpression>
 	</parameter>
+	<parameter name="RUN_DIR" class="java.lang.String" isForPrompting="false"/>
 	<queryString language="xPath">
 		<![CDATA[/USBR_Automated_Report/Report_Group/Report_Subgroup/Report_Element/Output_Temp_Flow/Output_Image]]>
 	</queryString>
@@ -95,7 +97,7 @@
 			</textField>
 			<image scaleImage="RetainShape">
 				<reportElement x="0" y="10" width="468" height="230" uuid="a11056c3-2ae1-49f2-b5f5-3ec9e59f41f0"/>
-				<imageExpression><![CDATA["..\\images\\"+$F{Output_Image}]]></imageExpression>
+				<imageExpression><![CDATA[$P{RUN_DIR}+"\\images\\"+$F{Output_Image}]]></imageExpression>
 			</image>
 		</band>
 	</summary>

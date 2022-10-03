@@ -14,7 +14,8 @@
 	<property name="com.jaspersoft.studio.unit.columnSpacing" value="pixel"/>
 	<parameter name="p_Reservoir" class="java.lang.String" isForPrompting="false">
 		<defaultValueExpression><![CDATA["Shasta"]]></defaultValueExpression>
-	</parameter>	<parameter name="REPORT_DIR" class="java.lang.String" isForPrompting="false">
+	</parameter>
+	<parameter name="REPORT_DIR" class="java.lang.String" isForPrompting="false">
 		<defaultValueExpression><![CDATA["Reports\\"]]></defaultValueExpression>
 	</parameter>
 	<parameter name="p_FigureNumber" class="java.lang.Integer" isForPrompting="false">
@@ -26,6 +27,7 @@
 	<parameter name="p_ProfileImage" class="java.lang.String" isForPrompting="false">
 		<defaultValueExpression><![CDATA["Shasta_Temperature_2013_00.png"]]></defaultValueExpression>
 	</parameter>
+	<parameter name="RUN_DIR" class="java.lang.String" isForPrompting="false"/>
 	<queryString language="xPath">
 		<![CDATA[/USBR_Automated_Report/Report_Group/Report_Subgroup/Report_Element/Reservoir_Profiles/Profile_Image]]>
 	</queryString>
@@ -109,7 +111,7 @@
 					<property name="com.jaspersoft.studio.unit.height" value="px"/>
 					<property name="com.jaspersoft.studio.unit.width" value="px"/>
 				</reportElement>
-				<imageExpression><![CDATA["..\\images\\"+$F{Profile_Image}]]></imageExpression>
+				<imageExpression><![CDATA[$P{RUN_DIR}+"\\images\\"+$F{Profile_Image}]]></imageExpression>
 			</image>
 			<break>
 				<reportElement positionType="Float" x="0" y="502" width="468" height="1" uuid="e9fef97b-06d5-4ae0-9c13-1f07bf4018d1">
