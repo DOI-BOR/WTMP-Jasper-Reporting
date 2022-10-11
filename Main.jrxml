@@ -3,6 +3,7 @@
 <jasperReport xmlns="http://jasperreports.sourceforge.net/jasperreports" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://jasperreports.sourceforge.net/jasperreports http://jasperreports.sourceforge.net/xsd/jasperreport.xsd" name="Main" language="groovy" pageWidth="612" pageHeight="792" columnWidth="468" leftMargin="72" rightMargin="72" topMargin="72" bottomMargin="72" uuid="127f2104-c03a-478b-b43f-003f6e814e84">
 	<property name="net.sf.jasperreports.data.adapter" value="USBRAutomatedReportDataAdapter.xml"/>
 	<property name="com.jaspersoft.studio.report.description" value=""/>
+	<property name="net.sf.jasperreports.awt.ignore.missing.font" value="true"/>
 	<parameter name="watershedName" class="java.lang.String" isForPrompting="false"/>
 	<parameter name="simulationName" class="java.lang.String" isForPrompting="false"/>
 	<parameter name="simulationDate" class="java.lang.String" isForPrompting="false"/>
@@ -56,22 +57,22 @@
 				<textField bookmarkLevel="1">
 					<reportElement stretchType="ElementGroupHeight" x="0" y="5" width="468" height="30" forecolor="#2F5496" uuid="9739f831-84d0-49a8-80cd-e2ae6904e9f4"/>
 					<textElement markup="styled">
-						<font fontName="Segoe UI" size="20"/>
+						<font fontName="Open Sans" size="20"/>
 					</textElement>
 					<textFieldExpression><![CDATA[$F{ReportGroupName}]]></textFieldExpression>
 					<anchorNameExpression><![CDATA[$F{ReportGroupName}]]></anchorNameExpression>
 				</textField>
 			</band>
-			<band height="14">
+			<band height="15">
 				<printWhenExpression><![CDATA[$F{GroupText} != "" || $F{GroupText} != null]]></printWhenExpression>
 				<textField textAdjust="StretchHeight" isBlankWhenNull="true">
-					<reportElement positionType="Float" stretchType="ElementGroupHeight" x="0" y="0" width="468" height="14" isRemoveLineWhenBlank="true" uuid="50752671-bea8-49b8-a598-9491c694dcee">
+					<reportElement positionType="Float" stretchType="ElementGroupHeight" x="0" y="0" width="468" height="15" isRemoveLineWhenBlank="true" uuid="50752671-bea8-49b8-a598-9491c694dcee">
 						<property name="com.jaspersoft.studio.unit.height" value="px"/>
 						<property name="com.jaspersoft.studio.unit.width" value="px"/>
 						<printWhenExpression><![CDATA[$F{GroupText} != "" || $F{GroupText} != null]]></printWhenExpression>
 					</reportElement>
 					<textElement textAlignment="Left" markup="styled">
-						<font fontName="Segoe UI"/>
+						<font fontName="Open Sans" size="11"/>
 					</textElement>
 					<textFieldExpression><![CDATA[$F{GroupText}]]></textFieldExpression>
 				</textField>
@@ -89,22 +90,21 @@
 						<property name="com.jaspersoft.studio.unit.height" value="px"/>
 					</reportElement>
 					<textElement markup="styled">
-						<font fontName="Segoe UI" size="16"/>
+						<font fontName="Open Sans" size="16"/>
 					</textElement>
 					<textFieldExpression><![CDATA[$F{ReportSubgroupDescription}]]></textFieldExpression>
 					<anchorNameExpression><![CDATA[$F{ReportSubgroupDescription}]]></anchorNameExpression>
 				</textField>
 			</band>
-			<band height="14">
+			<band height="15">
 				<printWhenExpression><![CDATA[$F{SubGroupText} != "" || $F{SubGroupText} != null]]></printWhenExpression>
 				<textField textAdjust="StretchHeight" isBlankWhenNull="true">
-					<reportElement positionType="Float" stretchType="ElementGroupHeight" x="0" y="0" width="468" height="14" isRemoveLineWhenBlank="true" uuid="6662d9c5-05f6-4db4-a3bb-73f7c2c5b48c">
-						<property name="com.jaspersoft.studio.unit.height" value="px"/>
+					<reportElement positionType="Float" stretchType="ElementGroupHeight" x="0" y="0" width="468" height="15" isRemoveLineWhenBlank="true" uuid="6662d9c5-05f6-4db4-a3bb-73f7c2c5b48c">
 						<property name="com.jaspersoft.studio.unit.width" value="px"/>
 						<printWhenExpression><![CDATA[$F{SubGroupText} != "" || $F{SubGroupText} != null]]></printWhenExpression>
 					</reportElement>
 					<textElement textAlignment="Left" markup="styled">
-						<font fontName="Segoe UI"/>
+						<font fontName="Open Sans" size="11"/>
 					</textElement>
 					<textFieldExpression><![CDATA[$F{SubGroupText}]]></textFieldExpression>
 				</textField>
@@ -168,7 +168,7 @@
 					<property name="com.jaspersoft.studio.unit.width" value="px"/>
 				</reportElement>
 				<textElement textAlignment="Left">
-					<font fontName="Segoe UI"/>
+					<font fontName="Open Sans"/>
 				</textElement>
 				<textFieldExpression><![CDATA["USBR Draft Validation, &#9094;Project: "+$P{watershedName}]]></textFieldExpression>
 			</textField>
@@ -177,7 +177,7 @@
 					<property name="com.jaspersoft.studio.unit.height" value="px"/>
 				</reportElement>
 				<textElement textAlignment="Right">
-					<font fontName="Segoe UI"/>
+					<font fontName="Open Sans"/>
 				</textElement>
 				<textFieldExpression><![CDATA["Report Date: " + new SimpleDateFormat("MMMM dd, yyyy").format(new Date()) + "Simulation: " + $P{simulationName}]]></textFieldExpression>
 			</textField>
@@ -197,7 +197,7 @@
 					<property name="com.jaspersoft.studio.unit.height" value="px"/>
 				</reportElement>
 				<textElement textAlignment="Center">
-					<font fontName="Segoe UI"/>
+					<font fontName="Open Sans"/>
 				</textElement>
 				<textFieldExpression><![CDATA[$V{PAGE_NUMBER}]]></textFieldExpression>
 			</textField>

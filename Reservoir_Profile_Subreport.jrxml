@@ -12,6 +12,7 @@
 	<property name="com.jaspersoft.studio.unit.rightMargin" value="pixel"/>
 	<property name="com.jaspersoft.studio.unit.columnWidth" value="pixel"/>
 	<property name="com.jaspersoft.studio.unit.columnSpacing" value="pixel"/>
+	<property name="net.sf.jasperreports.awt.ignore.missing.font" value="true"/>
 	<parameter name="p_Reservoir" class="java.lang.String" isForPrompting="false">
 		<defaultValueExpression><![CDATA["Shasta"]]></defaultValueExpression>
 	</parameter>
@@ -101,7 +102,7 @@
 					<property name="com.jaspersoft.studio.unit.height" value="px"/>
 				</reportElement>
 				<textElement>
-					<font isBold="true"/>
+					<font fontName="Open Sans" size="11" isBold="true"/>
 				</textElement>
 				<textFieldExpression><![CDATA["Figure "+$P{p_FigureNumber}+". "+$P{p_FigureDescription}]]></textFieldExpression>
 				<anchorNameExpression><![CDATA["Figure "+$P{p_FigureNumber}+". "+$P{p_FigureDescription}]]></anchorNameExpression>
