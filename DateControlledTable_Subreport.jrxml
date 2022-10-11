@@ -1,9 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<!-- Created with Jaspersoft Studio version 6.17.0.final using JasperReports Library version 6.17.0-6d93193241dd8cc42629e188b94f9e0bc5722efd  -->
+<!-- Created with Jaspersoft Studio version 6.11.0.final using JasperReports Library version 6.11.0-0c4056ccaa4d25a5a8c45672d2f764ea3498bebb  -->
 <jasperReport xmlns="http://jasperreports.sourceforge.net/jasperreports" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://jasperreports.sourceforge.net/jasperreports http://jasperreports.sourceforge.net/xsd/jasperreport.xsd" name="DateControlledTable_Subreport" language="groovy" pageWidth="468" pageHeight="648" columnWidth="468" leftMargin="0" rightMargin="0" topMargin="0" bottomMargin="0" uuid="127f2104-c03a-478b-b43f-003f6e814e84">
 	<property name="com.jaspersoft.studio.report.description" value=""/>
 	<property name="net.sf.jasperreports.data.adapter" value="USBRAutomatedReportDataAdapter.xml"/>
-	
+	<property name="net.sf.jasperreports.awt.ignore.missing.font" value="true"/>
 	<style name="Crosstab_CH" mode="Opaque" backcolor="#FFFFFF">
 		<box>
 			<pen lineWidth="0.5" lineColor="#000000"/>
@@ -128,7 +128,7 @@
 				</reportElement>
 				<box topPadding="3"/>
 				<textElement verticalAlignment="Top" markup="styled">
-					<font isBold="true"/>
+					<font fontName="open sans" isBold="true"/>
 				</textElement>
 				<textFieldExpression><![CDATA["Table "+$F{TableNumber}+". "+$F{TableDescription}]]></textFieldExpression>
 				<anchorNameExpression><![CDATA["Table "+$F{TableNumber}+". "+$F{TableDescription}]]></anchorNameExpression>
@@ -157,7 +157,9 @@
 						</box>
 						<textField textAdjust="StretchHeight">
 							<reportElement stretchType="ContainerHeight" x="0" y="0" width="100" height="40" uuid="4c596f40-6781-4b71-8b69-ef0caafaeb06"/>
-							<textElement verticalAlignment="Bottom"/>
+							<textElement verticalAlignment="Bottom">
+								<font fontName="Open Sans"/>
+							</textElement>
 							<textFieldExpression><![CDATA[$P{p_TableType}]]></textFieldExpression>
 						</textField>
 					</cellContents>
@@ -192,7 +194,7 @@
 								<reportElement positionType="Float" x="0" y="0" width="100" height="20" uuid="9dee4725-0986-4e38-90d9-9bdbc600c508"/>
 								<box padding="2"/>
 								<textElement textAlignment="Left" verticalAlignment="Middle" markup="styled">
-									<font fontName="Segoe UI"/>
+									<font fontName="Open Sans"/>
 								</textElement>
 								<textFieldExpression><![CDATA[$V{Row_name}]]></textFieldExpression>
 							</textField>
@@ -233,7 +235,7 @@
 							<textField textAdjust="StretchHeight">
 								<reportElement stretchType="ContainerHeight" x="0" y="0" width="57" height="20" uuid="23230cf9-ccc2-4088-88bf-e9d324a69ed2"/>
 								<textElement textAlignment="Left" verticalAlignment="Bottom" markup="styled">
-									<font fontName="Segoe UI Semibold"/>
+									<font fontName="Open Sans"/>
 								</textElement>
 								<textFieldExpression><![CDATA[$V{DateColumn_Name}]]></textFieldExpression>
 							</textField>
@@ -275,7 +277,7 @@
 								<reportElement positionType="Float" stretchType="ContainerHeight" x="0" y="0" width="57" height="20" uuid="ed5f18fc-60bf-4952-81d5-4ecbd7426a64"/>
 								<box padding="2"/>
 								<textElement textAlignment="Left" verticalAlignment="Bottom" markup="styled">
-									<font fontName="Segoe UI Semibold"/>
+									<font fontName="Open Sans"/>
 								</textElement>
 								<textFieldExpression><![CDATA[$V{Column_Name}]]></textFieldExpression>
 							</textField>
@@ -309,7 +311,7 @@
 							</reportElement>
 							<box padding="2"/>
 							<textElement textAlignment="Left" verticalAlignment="Middle" markup="styled">
-								<font fontName="Segoe UI"/>
+								<font fontName="Open Sans"/>
 							</textElement>
 							<textFieldExpression><![CDATA[$V{Row_MEASURE}]]></textFieldExpression>
 						</textField>

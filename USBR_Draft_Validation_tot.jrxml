@@ -3,32 +3,35 @@
 <jasperReport xmlns="http://jasperreports.sourceforge.net/jasperreports" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://jasperreports.sourceforge.net/jasperreports http://jasperreports.sourceforge.net/xsd/jasperreport.xsd" name="USBR_Draft_Validation_tot" language="groovy" pageWidth="612" pageHeight="792" whenNoDataType="AllSectionsNoDetail" columnWidth="468" leftMargin="72" rightMargin="72" topMargin="72" bottomMargin="72" uuid="2f285723-e7fb-47ce-910a-e54a75215012">
 	<property name="com.jaspersoft.studio.data.defaultdataadapter" value="TocData"/>
 	<property name="com.jaspersoft.studio.unit." value="pixel"/>
-	<style name="Title" hTextAlign="Right" hImageAlign="Right" fontSize="32">
+	<property name="net.sf.jasperreports.awt.ignore.missing.font" value="true"/>
+	<style name="Title" hTextAlign="Right" hImageAlign="Right" fontName="Open Sans" fontSize="32">
 		<box>
 			<topPen lineWidth="1.0"/>
 		</box>
 	</style>
-	<style name="Heading1" fontSize="16" isBold="true">
+	<style name="Heading1" fontName="Open Sans" fontSize="11" isBold="false">
 		<box>
 			<bottomPen lineWidth="0.5" lineStyle="Dashed"/>
 		</box>
 	</style>
-	<style name="HeadingLabel1" style="Heading1"/>
-	<style name="HeadingIndex1" style="Heading1"/>
-	<style name="Heading2" fontSize="16">
+	<style name="HeadingLabel1" style="Heading1" fontName="Open Sans" fontSize="11" isBold="false" isItalic="false" isUnderline="false" isStrikeThrough="false">
+		<box rightPadding="4"/>
+	</style>
+	<style name="HeadingIndex1" style="Heading1" fontName="Open Sans" fontSize="11" isBold="false" isItalic="false" isUnderline="false" isStrikeThrough="false"/>
+	<style name="Heading2" fontName="Open Sans" fontSize="16" isBold="false">
 		<box>
 			<bottomPen lineWidth="0.5" lineStyle="Dashed"/>
 		</box>
 	</style>
-	<style name="HeadingLabel2" style="Heading2"/>
-	<style name="HeadingIndex2" style="Heading2"/>
-	<style name="Heading3" fontSize="12">
+	<style name="HeadingLabel2" style="Heading2" fontName="Open Sans" isBold="false"/>
+	<style name="HeadingIndex2" style="Heading2" fontName="Open Sans" isBold="false"/>
+	<style name="Heading3" fontName="Open Sans" fontSize="12" isBold="false">
 		<box>
 			<bottomPen lineWidth="0.0" lineStyle="Dashed"/>
 		</box>
 	</style>
-	<style name="HeadingLabel3" style="Heading3"/>
-	<style name="HeadingIndex3" style="Heading3"/>
+	<style name="HeadingLabel3" style="Heading3" fontName="Open Sans" isBold="false"/>
+	<style name="HeadingIndex3" style="Heading3" fontName="Open Sans" isBold="false"/>
 	<parameter name="REPORT_DIR" class="java.lang.String" isForPrompting="false">
 		<defaultValueExpression><![CDATA["Reports\\"]]></defaultValueExpression>
 	</parameter>
@@ -50,9 +53,9 @@
 		<band splitType="Stretch"/>
 	</background>
 	<pageHeader>
-		<band height="68">
+		<band height="60">
 			<textField textAdjust="StretchHeight">
-				<reportElement style="Title" x="0" y="28" width="468" height="40" forecolor="#2F5496" uuid="1b662e99-0182-41b0-b735-b17f4394ac42">
+				<reportElement style="Title" x="0" y="28" width="468" height="32" forecolor="#2F5496" uuid="1b662e99-0182-41b0-b735-b17f4394ac42">
 					<property name="local_mesure_unitwidth" value="pixel"/>
 					<property name="com.jaspersoft.studio.unit.width" value="px"/>
 					<property name="com.jaspersoft.studio.unit.height" value="px"/>
@@ -61,7 +64,7 @@
 					<topPen lineWidth="0.0" lineColor="#A0D042"/>
 				</box>
 				<textElement textAlignment="Left">
-					<font fontName="Segoe UI" size="20" isBold="true"/>
+					<font fontName="Open Sans" size="20" isBold="false"/>
 				</textElement>
 				<textFieldExpression><![CDATA["TABLE OF TABLES"]]></textFieldExpression>
 			</textField>
@@ -72,7 +75,7 @@
 					<printWhenExpression><![CDATA[$P{printHeaderAndFooter}==TRUE()]]></printWhenExpression>
 				</reportElement>
 				<textElement textAlignment="Left" markup="styled">
-					<font fontName="Segoe UI"/>
+					<font fontName="Open Sans"/>
 				</textElement>
 				<textFieldExpression><![CDATA["USBR Draft Validation, &#9094;Project: "+$P{watershedName}]]></textFieldExpression>
 			</textField>
@@ -82,38 +85,40 @@
 					<printWhenExpression><![CDATA[$P{printHeaderAndFooter}==TRUE()]]></printWhenExpression>
 				</reportElement>
 				<textElement textAlignment="Right">
-					<font fontName="Segoe UI"/>
+					<font fontName="Open Sans"/>
 				</textElement>
 				<textFieldExpression><![CDATA["Report Date: " + new SimpleDateFormat("MMMM dd, yyyy").format(new Date()) + "Simulation: " + $P{simulationName}]]></textFieldExpression>
 			</textField>
 		</band>
 	</pageHeader>
 	<detail>
-		<band height="22" splitType="Stretch">
+		<band height="17" splitType="Stretch">
 			<property name="local_mesure_unitheight" value="pixel"/>
 			<property name="com.jaspersoft.studio.unit.height" value="px"/>
 			<printWhenExpression><![CDATA[$F{level} ==3 && LEFT($F{label},1)=="T"]]></printWhenExpression>
 			<textField textAdjust="StretchHeight" hyperlinkType="LocalAnchor">
-				<reportElement style="HeadingLabel1" stretchType="ElementGroupHeight" x="0" y="0" width="423" height="22" uuid="379fcff2-021d-4761-a89a-eeb772723b1b">
+				<reportElement style="HeadingLabel2" positionType="Float" stretchType="ElementGroupHeight" x="0" y="0" width="423" height="17" uuid="379fcff2-021d-4761-a89a-eeb772723b1b">
 					<property name="local_mesure_unitheight" value="pixel"/>
 					<property name="local_mesure_unity" value="pixel"/>
 					<property name="com.jaspersoft.studio.unit.y" value="px"/>
 					<property name="com.jaspersoft.studio.unit.height" value="px"/>
 				</reportElement>
-				<textElement markup="styled">
-					<font fontName="Segoe UI" size="16" isBold="false"/>
+				<box topPadding="1" leftPadding="1" bottomPadding="1" rightPadding="4"/>
+				<textElement verticalAlignment="Top" markup="styled">
+					<font fontName="Open Sans" size="11" isBold="false"/>
 				</textElement>
 				<textFieldExpression><![CDATA[$F{label}]]></textFieldExpression>
 				<hyperlinkAnchorExpression><![CDATA[$F{label}]]></hyperlinkAnchorExpression>
 			</textField>
 			<textField textAdjust="StretchHeight" evaluationTime="Auto" hyperlinkType="LocalAnchor">
-				<reportElement style="HeadingIndex1" stretchType="ElementGroupHeight" x="423" y="0" width="45" height="22" uuid="a31e80f3-f1fa-4643-adbe-77a61c7b9051">
+				<reportElement style="HeadingIndex2" positionType="Float" stretchType="ElementGroupHeight" x="423" y="0" width="45" height="17" uuid="a31e80f3-f1fa-4643-adbe-77a61c7b9051">
 					<property name="local_mesure_unitheight" value="pixel"/>
 					<property name="com.jaspersoft.studio.unit.y" value="px"/>
 					<property name="com.jaspersoft.studio.unit.height" value="px"/>
 				</reportElement>
-				<textElement textAlignment="Right" verticalAlignment="Bottom">
-					<font fontName="Segoe UI" isBold="false"/>
+				<box topPadding="1" leftPadding="1" bottomPadding="1" rightPadding="1"/>
+				<textElement textAlignment="Right" verticalAlignment="Top">
+					<font fontName="Open Sans" size="11" isBold="false"/>
 				</textElement>
 				<textFieldExpression><![CDATA[$V{PAGE_NUMBER} + $F{pageIndex}]]></textFieldExpression>
 				<hyperlinkAnchorExpression><![CDATA[$F{label}]]></hyperlinkAnchorExpression>
@@ -127,8 +132,8 @@
 				<reportElement x="0" y="0" width="468" height="20" uuid="b5606559-9427-43ba-8208-d32a24e9fb6c">
 					<property name="com.jaspersoft.studio.unit.height" value="px"/>
 				</reportElement>
-				<textElement textAlignment="Center">
-					<font fontName="Segoe UI"/>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font fontName="Open Sans"/>
 				</textElement>
 				<textFieldExpression><![CDATA[($V{MASTER_CURRENT_PAGE}-1==0?"0":"")+
 ($V{MASTER_CURRENT_PAGE}-1==1?"i":"")+
