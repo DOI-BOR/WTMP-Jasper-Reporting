@@ -56,7 +56,7 @@
 					<property name="com.jaspersoft.studio.unit.height" value="px"/>
 				</reportElement>
 				<textElement markup="styled">
-					<font fontName="Open Sans" size="11"/>
+					<font fontName="Open Sans" size="10"/>
 				</textElement>
 				<textFieldExpression><![CDATA[$F{Text}]]></textFieldExpression>
 			</textField>

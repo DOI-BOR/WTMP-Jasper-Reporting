@@ -67,6 +67,9 @@
 					<subreportParameter name="RUN_DIR">
 						<subreportParameterExpression><![CDATA[$P{RUN_DIR}]]></subreportParameterExpression>
 					</subreportParameter>
+					<subreportParameter name="p_TableDescription">
+						<subreportParameterExpression><![CDATA[$F{TableDescription}]]></subreportParameterExpression>
+					</subreportParameter>
 					<connectionExpression><![CDATA[$P{REPORT_CONNECTION}]]></connectionExpression>
 					<subreportExpression><![CDATA[$P{REPORT_DIR} + "\\JasperC\\Control_Point_Tables_Subreport.jasper"]]></subreportExpression>
 				</subreport>
