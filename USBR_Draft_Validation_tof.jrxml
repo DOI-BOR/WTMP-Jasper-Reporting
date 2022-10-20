@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<!-- Created with Jaspersoft Studio version 6.11.0.final using JasperReports Library version 6.11.0-0c4056ccaa4d25a5a8c45672d2f764ea3498bebb  -->
+<!-- Created with Jaspersoft Studio version 6.16.0.final using JasperReports Library version 6.16.0-48579d909b7943b64690c65c71e07e0b80981928  -->
 <jasperReport xmlns="http://jasperreports.sourceforge.net/jasperreports" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://jasperreports.sourceforge.net/jasperreports http://jasperreports.sourceforge.net/xsd/jasperreport.xsd" name="USBR_Draft_Validation_tof" language="groovy" pageWidth="612" pageHeight="792" whenNoDataType="AllSectionsNoDetail" columnWidth="468" leftMargin="72" rightMargin="72" topMargin="72" bottomMargin="72" uuid="2f285723-e7fb-47ce-910a-e54a75215012">
 	<property name="com.jaspersoft.studio.data.defaultdataadapter" value="TocData"/>
 	<property name="com.jaspersoft.studio.unit." value="pixel"/>
@@ -77,17 +77,17 @@
 				<textElement textAlignment="Left" markup="styled">
 					<font fontName="Open Sans"/>
 				</textElement>
-				<textFieldExpression><![CDATA["USBR Draft Validation, &#9094;Project: "+$P{watershedName}]]></textFieldExpression>
+				<textFieldExpression><![CDATA["USBR Draft Validation &#10;Project: "+$P{watershedName}]]></textFieldExpression>
 			</textField>
 			<textField>
 				<reportElement x="234" y="0" width="234" height="28" uuid="9e5882e4-9bef-4ee8-b3f1-c2154b71bf74">
 					<property name="com.jaspersoft.studio.unit.height" value="px"/>
 					<printWhenExpression><![CDATA[$P{printHeaderAndFooter}==TRUE()]]></printWhenExpression>
 				</reportElement>
-				<textElement textAlignment="Right">
+				<textElement textAlignment="Right" markup="styled">
 					<font fontName="Open Sans"/>
 				</textElement>
-				<textFieldExpression><![CDATA["Report Date: " + new SimpleDateFormat("MMMM dd, yyyy").format(new Date()) + "Simulation: " + $P{simulationName}]]></textFieldExpression>
+				<textFieldExpression><![CDATA["Report Date: " + new SimpleDateFormat("MMMM dd, yyyy").format(new Date()) + "&#10;Simulation: " + $P{simulationName}]]></textFieldExpression>
 			</textField>
 		</band>
 	</pageHeader>

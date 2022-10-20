@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<!-- Created with Jaspersoft Studio version 6.11.0.final using JasperReports Library version 6.11.0-0c4056ccaa4d25a5a8c45672d2f764ea3498bebb  -->
+<!-- Created with Jaspersoft Studio version 6.16.0.final using JasperReports Library version 6.16.0-48579d909b7943b64690c65c71e07e0b80981928  -->
 <jasperReport xmlns="http://jasperreports.sourceforge.net/jasperreports" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://jasperreports.sourceforge.net/jasperreports http://jasperreports.sourceforge.net/xsd/jasperreport.xsd" name="Reservoir_Profile_Subreport" language="groovy" pageWidth="468" pageHeight="648" columnWidth="468" leftMargin="0" rightMargin="0" topMargin="0" bottomMargin="0" uuid="127f2104-c03a-478b-b43f-003f6e814e84">
 	<property name="com.jaspersoft.studio.report.description" value=""/>
 	<property name="net.sf.jasperreports.data.adapter" value="USBRAutomatedReportDataAdapter.xml"/>
@@ -102,7 +102,7 @@
 					<property name="com.jaspersoft.studio.unit.height" value="px"/>
 				</reportElement>
 				<textElement>
-					<font fontName="Open Sans" size="11" isBold="true"/>
+					<font fontName="Open Sans" size="10" isBold="true"/>
 				</textElement>
 				<textFieldExpression><![CDATA["Figure "+$P{p_FigureNumber}+". "+$P{p_FigureDescription}]]></textFieldExpression>
 				<anchorNameExpression><![CDATA["Figure "+$P{p_FigureNumber}+". "+$P{p_FigureDescription}]]></anchorNameExpression>

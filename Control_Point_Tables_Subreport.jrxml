@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<!-- Created with Jaspersoft Studio version 6.11.0.final using JasperReports Library version 6.11.0-0c4056ccaa4d25a5a8c45672d2f764ea3498bebb  -->
+<!-- Created with Jaspersoft Studio version 6.17.0.final using JasperReports Library version 6.17.0-6d93193241dd8cc42629e188b94f9e0bc5722efd  -->
 <jasperReport xmlns="http://jasperreports.sourceforge.net/jasperreports" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://jasperreports.sourceforge.net/jasperreports http://jasperreports.sourceforge.net/xsd/jasperreport.xsd" name="Control_Point_Tables_Subreport" language="groovy" pageWidth="468" pageHeight="648" columnWidth="468" leftMargin="0" rightMargin="0" topMargin="0" bottomMargin="0" uuid="127f2104-c03a-478b-b43f-003f6e814e84">
 	<property name="com.jaspersoft.studio.report.description" value=""/>
 	<property name="net.sf.jasperreports.data.adapter" value="USBRAutomatedReportDataAdapter.xml"/>
@@ -10,7 +10,7 @@
 			<topPen lineWidth="0.0" lineColor="#000000"/>
 			<leftPen lineWidth="0.0" lineColor="#000000"/>
 			<bottomPen lineWidth="0.0" lineColor="#000000"/>
-			<rightPen lineWidth="0.0" lineColor="#000000"/>
+			<rightPen lineWidth="0.25" lineColor="#000000"/>
 		</box>
 	</style>
 	<style name="Crosstab_CG" mode="Transparent" backcolor="#FFFFFF" fontName="Open Sans">
@@ -43,12 +43,8 @@
 	<parameter name="REPORT_DIR" class="java.lang.String" isForPrompting="false">
 		<defaultValueExpression><![CDATA["Reports\\"]]></defaultValueExpression>
 	</parameter>
-	<parameter name="p_ReportElementOrder" class="java.lang.Integer" isForPrompting="false">
-		<defaultValueExpression><![CDATA[30]]></defaultValueExpression>
-	</parameter>
-	<parameter name="p_TableNumber" class="java.lang.Integer" isForPrompting="false">
-		<defaultValueExpression><![CDATA[12]]></defaultValueExpression>
-	</parameter>
+	<parameter name="p_ReportElementOrder" class="java.lang.Integer" isForPrompting="false"/>
+	<parameter name="p_TableNumber" class="java.lang.Integer" isForPrompting="false"/>
 	<parameter name="p_TableType" class="java.lang.String" isForPrompting="false"/>
 	<queryString language="xPath">
 		<![CDATA[/USBR_Automated_Report/Report_Group/Report_Subgroup/Report_Element/Output_Temp_Flow/Output_Table/Column/Row]]>
@@ -110,23 +106,27 @@
 		<fieldDescription><![CDATA[ancestor::Report_Group/@ReportGroupName]]></fieldDescription>
 	</field>
 	<filterExpression><![CDATA[$F{ReportElementOrder}==$P{p_ReportElementOrder}&&$F{TableNumber}==$P{p_TableNumber}]]></filterExpression>
-	<summary>
-		<band height="80" splitType="Stretch">
-			<property name="com.jaspersoft.studio.unit.height" value="px"/>
-			<textField bookmarkLevel="3">
-				<reportElement positionType="Float" x="0" y="8" width="468" height="22" uuid="43cc7eb9-9f03-4a86-ab63-c0d52a64edf0">
+	<columnHeader>
+		<band height="30">
+			<textField textAdjust="StretchHeight" bookmarkLevel="3">
+				<reportElement positionType="Float" stretchType="ElementGroupHeight" x="0" y="8" width="468" height="22" uuid="8b582871-6b36-4b7c-850b-a4a6c72e6f70">
 					<property name="com.jaspersoft.studio.unit.height" value="px"/>
 					<property name="com.jaspersoft.studio.unit.y" value="px"/>
 				</reportElement>
 				<box topPadding="3"/>
 				<textElement verticalAlignment="Top" markup="styled">
-					<font fontName="Open Sans" isBold="true"/>
+					<font fontName="Open Sans" size="10" isBold="true"/>
 				</textElement>
 				<textFieldExpression><![CDATA["Table "+$F{TableNumber}+". "+$F{TableDescription}]]></textFieldExpression>
 				<anchorNameExpression><![CDATA["Table "+$F{TableNumber}+". "+$F{TableDescription}]]></anchorNameExpression>
 			</textField>
+		</band>
+	</columnHeader>
+	<summary>
+		<band height="53" splitType="Stretch">
+			<property name="com.jaspersoft.studio.unit.height" value="px"/>
 			<crosstab>
-				<reportElement positionType="Float" x="0" y="30" width="468" height="50" uuid="9c533986-f1ec-4b4e-8c22-5886c797447c">
+				<reportElement positionType="Float" x="0" y="3" width="468" height="50" uuid="9c533986-f1ec-4b4e-8c22-5886c797447c">
 					<property name="com.jaspersoft.studio.layout" value="com.jaspersoft.studio.editor.layout.VerticalRowLayout"/>
 					<property name="com.jaspersoft.studio.crosstab.style.header" value="Crosstab_CH"/>
 					<property name="com.jaspersoft.studio.crosstab.style.group" value="Crosstab_CG"/>
@@ -134,9 +134,7 @@
 					<property name="com.jaspersoft.studio.crosstab.style.detail" value="Crosstab_CD"/>
 					<property name="com.jaspersoft.studio.unit.y" value="px"/>
 				</reportElement>
-				<crosstabParameter name="p_TableType">
-					<parameterValueExpression><![CDATA[$P{p_TableType}]]></parameterValueExpression>
-				</crosstabParameter>
+				<crosstabParameter name="p_TableType"/>
 				<parametersMapExpression><![CDATA[$P{REPORT_PARAMETERS_MAP}]]></parametersMapExpression>
 				<crosstabDataset>
 					<dataset resetType="Report"/>
@@ -147,24 +145,18 @@
 					</cellContents>
 				</titleCell>
 				<crosstabHeaderCell>
-					<cellContents style="Crosstab_CH">
+					<cellContents>
 						<box>
-							<pen lineWidth="0.0"/>
 							<topPen lineWidth="1.0"/>
 							<leftPen lineWidth="1.0"/>
 							<bottomPen lineWidth="1.0"/>
 							<rightPen lineWidth="1.0"/>
 						</box>
 						<textField>
-							<reportElement stretchType="ElementGroupHeight" x="0" y="0" width="100" height="20" uuid="ceb7cce2-91da-4f0b-b8ad-8c6420c84d92"/>
-							<box leftPadding="2">
-								<topPen lineWidth="0.0"/>
-								<leftPen lineWidth="0.0"/>
-								<bottomPen lineWidth="0.0"/>
-								<rightPen lineWidth="0.0"/>
-							</box>
+							<reportElement x="0" y="0" width="100" height="20" uuid="ceb7cce2-91da-4f0b-b8ad-8c6420c84d92"/>
+							<box padding="2"/>
 							<textElement textAlignment="Left" verticalAlignment="Middle" markup="styled">
-								<font fontName="Open Sans" size="11"/>
+								<font fontName="Open Sans" size="10"/>
 							</textElement>
 							<textFieldExpression><![CDATA[$P{p_TableType}]]></textFieldExpression>
 						</textField>
@@ -180,7 +172,9 @@
 						</cellContents>
 					</crosstabRowHeader>
 					<crosstabTotalRowHeader>
-						<cellContents mode="Transparent" style="Crosstab_CT"/>
+						<cellContents mode="Transparent" style="Crosstab_CG">
+							<property name="com.jaspersoft.studio.unit.height" value="px"/>
+						</cellContents>
 					</crosstabTotalRowHeader>
 				</rowGroup>
 				<rowGroup name="Row_name" width="100" totalPosition="End">
@@ -191,7 +185,6 @@
 						<cellContents mode="Opaque" style="Crosstab_CH">
 							<property name="com.jaspersoft.studio.unit.width" value="px"/>
 							<box>
-								<pen lineWidth="0.0"/>
 								<topPen lineWidth="1.0"/>
 								<leftPen lineWidth="1.0"/>
 								<bottomPen lineWidth="1.0"/>
@@ -199,14 +192,9 @@
 							</box>
 							<textField>
 								<reportElement x="0" y="0" width="100" height="20" uuid="9dee4725-0986-4e38-90d9-9bdbc600c508"/>
-								<box leftPadding="2">
-									<topPen lineWidth="0.0"/>
-									<leftPen lineWidth="0.0"/>
-									<bottomPen lineWidth="0.0"/>
-									<rightPen lineWidth="0.0"/>
-								</box>
+								<box padding="2"/>
 								<textElement textAlignment="Left" verticalAlignment="Middle" markup="styled">
-									<font fontName="Open Sans" size="11"/>
+									<font fontName="Open Sans" size="10"/>
 								</textElement>
 								<textFieldExpression><![CDATA[$V{Row_name}]]></textFieldExpression>
 							</textField>
@@ -237,8 +225,8 @@
 					</bucket>
 					<crosstabColumnHeader>
 						<cellContents mode="Opaque" style="Crosstab_CH">
+							<property name="com.jaspersoft.studio.unit.width" value="px"/>
 							<box>
-								<pen lineWidth="0.0"/>
 								<topPen lineWidth="1.0"/>
 								<leftPen lineWidth="1.0"/>
 								<bottomPen lineWidth="1.0"/>
@@ -246,14 +234,9 @@
 							</box>
 							<textField textAdjust="StretchHeight">
 								<reportElement x="0" y="0" width="57" height="20" uuid="ed5f18fc-60bf-4952-81d5-4ecbd7426a64"/>
-								<box leftPadding="2">
-									<topPen lineWidth="0.0"/>
-									<leftPen lineWidth="0.0"/>
-									<bottomPen lineWidth="0.0"/>
-									<rightPen lineWidth="0.0"/>
-								</box>
+								<box padding="2"/>
 								<textElement textAlignment="Left" verticalAlignment="Middle" markup="styled">
-									<font fontName="Open Sans" size="11"/>
+									<font fontName="Open Sans" size="10"/>
 								</textElement>
 								<textFieldExpression><![CDATA[$V{Column_Name}]]></textFieldExpression>
 							</textField>
@@ -269,14 +252,10 @@
 				<measure name="Background_Color" class="java.lang.String">
 					<measureExpression><![CDATA[LEFT($F{Background_Color},7)]]></measureExpression>
 				</measure>
-				<measure name="TableType" class="java.lang.String">
-					<measureExpression><![CDATA[$F{TableType}]]></measureExpression>
-				</measure>
 				<crosstabCell width="57" height="20">
 					<cellContents mode="Opaque" style="Crosstab_CD">
 						<property name="com.jaspersoft.studio.unit.width" value="px"/>
 						<box>
-							<pen lineWidth="0.0"/>
 							<topPen lineWidth="1.0"/>
 							<leftPen lineWidth="1.0"/>
 							<bottomPen lineWidth="1.0"/>
@@ -286,14 +265,9 @@
 							<reportElement mode="Opaque" x="0" y="0" width="57" height="20" uuid="ca509797-d97f-4b9d-be95-5277144c159f">
 								<propertyExpression name="net.sf.jasperreports.style.backcolor"><![CDATA[$V{Background_Color}]]></propertyExpression>
 							</reportElement>
-							<box leftPadding="2">
-								<topPen lineWidth="0.0"/>
-								<leftPen lineWidth="0.0"/>
-								<bottomPen lineWidth="0.0"/>
-								<rightPen lineWidth="0.0"/>
-							</box>
+							<box padding="2"/>
 							<textElement textAlignment="Left" verticalAlignment="Middle" markup="styled">
-								<font fontName="Open Sans" size="11"/>
+								<font fontName="Open Sans" size="10"/>
 							</textElement>
 							<textFieldExpression><![CDATA[$V{Row_MEASURE}]]></textFieldExpression>
 						</textField>
@@ -306,7 +280,9 @@
 					<cellContents mode="Opaque" style="Crosstab_CG"/>
 				</crosstabCell>
 				<crosstabCell width="57" height="0" rowTotalGroup="Row_Order">
-					<cellContents mode="Transparent" style="Crosstab_CT"/>
+					<cellContents mode="Opaque" style="Crosstab_CT">
+						<property name="com.jaspersoft.studio.unit.height" value="pixel"/>
+					</cellContents>
 				</crosstabCell>
 				<crosstabCell width="0" height="0" rowTotalGroup="Row_Order" columnTotalGroup="Column_Order">
 					<cellContents mode="Opaque" style="Crosstab_CT">
@@ -318,10 +294,12 @@
 					<cellContents mode="Opaque" style="Crosstab_CT"/>
 				</crosstabCell>
 				<crosstabCell width="57" height="0" rowTotalGroup="Row_name">
-					<cellContents mode="Transparent" style="Crosstab_CG"/>
+					<cellContents mode="Transparent" style="Crosstab_CG">
+						<property name="com.jaspersoft.studio.unit.height" value="px"/>
+					</cellContents>
 				</crosstabCell>
 				<crosstabCell width="0" height="0" rowTotalGroup="Row_name" columnTotalGroup="Column_Order">
-					<cellContents mode="Opaque" style="Crosstab_CT"/>
+					<cellContents mode="Transparent" style="Crosstab_CT"/>
 				</crosstabCell>
 				<crosstabCell width="0" height="0" rowTotalGroup="Row_name" columnTotalGroup="Column_Name">
 					<cellContents mode="Transparent" style="Crosstab_CG">

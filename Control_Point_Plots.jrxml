@@ -91,7 +91,7 @@
 					<property name="com.jaspersoft.studio.unit.height" value="px"/>
 				</reportElement>
 				<textElement>
-					<font fontName="Open Sans" size="11" isBold="true"/>
+					<font fontName="Open Sans" size="10" isBold="true"/>
 				</textElement>
 				<textFieldExpression><![CDATA["Figure "+$F{FigureNumber}+". "+$F{FigureDescription}]]></textFieldExpression>
 				<anchorNameExpression><![CDATA["Figure "+$F{FigureNumber}+". "+$F{FigureDescription}]]></anchorNameExpression>
