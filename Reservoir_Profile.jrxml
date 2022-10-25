@@ -43,7 +43,7 @@
 	</field>
 	<sortField name="FigureNumber"/>
 	<filterExpression><![CDATA[$F{ReportElementOrder}==$P{p_ReportElementOrder}]]></filterExpression>
-	<group name="FigureNumber">
+	<group name="FigureNumber" keepTogether="true">
 		<groupExpression><![CDATA[$F{FigureNumber}]]></groupExpression>
 		<groupFooter>
 			<band height="1">
