@@ -1,0 +1,33 @@
+plugins {
+    id "base"
+    id "maven-publish"
+}
+
+task zipJasper(type: Zip) {
+    from '.'
+    include '*.zip'
+    include '*.jrxml'
+    archiveBaseName = 'usbr-actionpanel-jasper'
+    includeEmptyDirs = false
+    destinationDirectory = file("$projectDir/build")
+
+    eachFile { fileCopyDetails ->
+        fileCopyDetails.setRelativePath(fileCopyDetails.getRelativePath().prepend("reports/jasper"))
+    }
+}
+build.dependsOn(zipJasper)
+assemble.dependsOn(zipJasper)
+
+artifacts {
+    'default' zipJasper
+    archives zipJasper
+}
+
+publishing {
+    publications {
+        maven(MavenPublication) {
+            artifactId = "usbr-actionpanel-jasper"
+            artifact source: zipJasper, extension: 'zip'
+        }
+    }
+}
