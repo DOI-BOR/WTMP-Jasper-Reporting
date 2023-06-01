@@ -52,10 +52,10 @@
 		<groupHeader>
 			<band height="35">
 				<property name="com.jaspersoft.studio.unit.height" value="px"/>
-				<textField bookmarkLevel="1">
+				<textField textAdjust="StretchHeight" bookmarkLevel="1">
 					<reportElement stretchType="ElementGroupHeight" x="0" y="5" width="468" height="30" forecolor="#2F5496" uuid="9739f831-84d0-49a8-80cd-e2ae6904e9f4"/>
 					<textElement markup="styled">
-						<font fontName="Open Sans" size="20"/>
+						<font fontName="Open Sans" size="20" isBold="true"/>
 					</textElement>
 					<textFieldExpression><![CDATA[$F{ReportGroupName}]]></textFieldExpression>
 					<anchorNameExpression><![CDATA[$F{ReportGroupName}]]></anchorNameExpression>
@@ -83,12 +83,12 @@
 			<band height="31">
 				<property name="com.jaspersoft.studio.unit.height" value="px"/>
 				<printWhenExpression><![CDATA[$F{ReportSubgroupDescription}!=null]]></printWhenExpression>
-				<textField isBlankWhenNull="true" bookmarkLevel="2">
+				<textField textAdjust="StretchHeight" isBlankWhenNull="true" bookmarkLevel="2">
 					<reportElement positionType="Float" stretchType="ElementGroupHeight" x="0" y="5" width="468" height="26" forecolor="#2F5496" uuid="0930ebfe-0d93-4335-9738-ebb5c056f57e">
 						<property name="com.jaspersoft.studio.unit.height" value="px"/>
 					</reportElement>
 					<textElement markup="styled">
-						<font fontName="Open Sans" size="16"/>
+						<font fontName="Open Sans" size="16" isBold="true"/>
 					</textElement>
 					<textFieldExpression><![CDATA[$F{ReportSubgroupDescription}]]></textFieldExpression>
 					<anchorNameExpression><![CDATA[$F{ReportSubgroupDescription}]]></anchorNameExpression>
