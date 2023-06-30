@@ -191,7 +191,7 @@
 								<bottomPen lineWidth="1.0"/>
 								<rightPen lineWidth="1.0"/>
 							</box>
-							<textField>
+							<textField textAdjust="StretchHeight">
 								<reportElement x="0" y="0" width="100" height="20" uuid="9dee4725-0986-4e38-90d9-9bdbc600c508"/>
 								<box padding="2"/>
 								<textElement textAlignment="Left" verticalAlignment="Middle" markup="styled">
@@ -264,7 +264,7 @@
 							<bottomPen lineWidth="1.0"/>
 							<rightPen lineWidth="1.0"/>
 						</box>
-						<textField>
+						<textField textAdjust="StretchHeight">
 							<reportElement mode="Opaque" x="0" y="0" width="61" height="20" uuid="ca509797-d97f-4b9d-be95-5277144c159f">
 								<propertyExpression name="net.sf.jasperreports.style.backcolor"><![CDATA[$V{Background_Color}]]></propertyExpression>
 							</reportElement>
