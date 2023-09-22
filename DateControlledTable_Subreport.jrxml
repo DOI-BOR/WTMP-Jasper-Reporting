@@ -132,7 +132,7 @@
 		<band height="100" splitType="Stretch">
 			<property name="com.jaspersoft.studio.unit.height" value="px"/>
 			<crosstab>
-				<reportElement x="0" y="30" width="468" height="60" uuid="9c533986-f1ec-4b4e-8c22-5886c797447c">
+				<reportElement positionType="Float" x="0" y="30" width="468" height="60" uuid="9c533986-f1ec-4b4e-8c22-5886c797447c">
 					<property name="com.jaspersoft.studio.layout" value="com.jaspersoft.studio.editor.layout.VerticalRowLayout"/>
 					<property name="com.jaspersoft.studio.crosstab.style.header" value="Crosstab_CH"/>
 					<property name="com.jaspersoft.studio.crosstab.style.group" value="Crosstab_CG"/>
