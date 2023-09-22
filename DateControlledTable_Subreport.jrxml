@@ -54,7 +54,7 @@
 		<defaultValueExpression><![CDATA["Reports\\"]]></defaultValueExpression>
 	</parameter>
 	<parameter name="p_ReportElementOrder" class="java.lang.Integer" isForPrompting="false">
-		<defaultValueExpression><![CDATA[3]]></defaultValueExpression>
+		<defaultValueExpression><![CDATA[4]]></defaultValueExpression>
 	</parameter>
 	<parameter name="p_TableNumber" class="java.lang.Integer" isForPrompting="false">
 		<defaultValueExpression><![CDATA[1]]></defaultValueExpression>
@@ -129,7 +129,7 @@
 	</field>
 	<filterExpression><![CDATA[$F{ReportElementOrder}==$P{p_ReportElementOrder}&&$F{TableNumber}==$P{p_TableNumber}]]></filterExpression>
 	<summary>
-		<band height="100" splitType="Stretch">
+		<band height="90" splitType="Stretch">
 			<property name="com.jaspersoft.studio.unit.height" value="px"/>
 			<crosstab>
 				<reportElement positionType="Float" x="0" y="30" width="468" height="60" uuid="9c533986-f1ec-4b4e-8c22-5886c797447c">
@@ -370,11 +370,11 @@
 				</crosstabCell>
 			</crosstab>
 			<textField textAdjust="StretchHeight" bookmarkLevel="3">
-				<reportElement positionType="Float" stretchType="ElementGroupHeight" x="0" y="8" width="468" height="22" uuid="aaea8a97-8f1e-40d4-922f-4711a6eba8ff">
+				<reportElement positionType="Float" x="0" y="8" width="468" height="22" uuid="aaea8a97-8f1e-40d4-922f-4711a6eba8ff">
 					<property name="com.jaspersoft.studio.unit.y" value="px"/>
 					<property name="com.jaspersoft.studio.unit.height" value="px"/>
 				</reportElement>
-				<box topPadding="3"/>
+				<box topPadding="3" bottomPadding="2"/>
 				<textElement verticalAlignment="Top" markup="styled">
 					<font fontName="Open San" size="10" isBold="true"/>
 				</textElement>
