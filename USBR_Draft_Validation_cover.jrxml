@@ -64,7 +64,7 @@
 				<textElement textAlignment="Left" markup="styled">
 					<font fontName="Open Sans" size="20"/>
 				</textElement>
-				<textFieldExpression><![CDATA["DRAFT Temperature Model Validation Summary Report"]]></textFieldExpression>
+				<textFieldExpression><![CDATA["USBR WTMP Summary Report"]]></textFieldExpression>
 			</textField>
 			<textField textAdjust="StretchHeight" isBlankWhenNull="true">
 				<reportElement positionType="Float" stretchType="RelativeToBandHeight" x="72" y="219" width="468" height="38" uuid="7f58d454-cae0-4ebb-9ccd-c885124eb525">
@@ -75,7 +75,7 @@
 				<textElement textAlignment="Left" markup="styled">
 					<font fontName="Open Sans" size="11"/>
 				</textElement>
-				<textFieldExpression><![CDATA["Project: USBR Framework Test " + $P{watershedName}]]></textFieldExpression>
+				<textFieldExpression><![CDATA["Study: " + $P{watershedName}]]></textFieldExpression>
 			</textField>
 			<textField textAdjust="StretchHeight" isBlankWhenNull="true">
 				<reportElement positionType="Float" stretchType="RelativeToBandHeight" x="72" y="257" width="468" height="19" uuid="74ddd512-2507-4420-9a72-d8d59b001986">

@@ -73,7 +73,7 @@
 				<textElement textAlignment="Left" markup="styled">
 					<font fontName="Open Sans"/>
 				</textElement>
-				<textFieldExpression><![CDATA["USBR Draft Validation &#10;Project: "+$P{watershedName}]]></textFieldExpression>
+				<textFieldExpression><![CDATA["USBR WTMP &#10;Study: "+$P{watershedName}]]></textFieldExpression>
 			</textField>
 			<textField textAdjust="StretchHeight">
 				<reportElement x="234" y="0" width="234" height="28" uuid="1c573599-57af-42bc-8e18-f995c7f7f51f">
