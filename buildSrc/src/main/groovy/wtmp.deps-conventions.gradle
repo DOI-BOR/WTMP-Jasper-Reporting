@@ -1,0 +1,11 @@
+plugins {
+    id 'project-report'
+}
+
+repositories {
+    mavenCentral()
+}
+
+tasks.register("generateDependenciesReport", DependencyReportTask) { depReport ->
+    depReport.setConfiguration("runtimeClasspath")
+}
