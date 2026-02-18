@@ -1,0 +1,5 @@
+includeBuild("$gradle.ext.externalLibDir") {
+    dependencySubstitution {
+	    substitute(module("usbr.wat.plugins:usbr-actionpanel-jasper")).using(project(":"))
+    }
+}

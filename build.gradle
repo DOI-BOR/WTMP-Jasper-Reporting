@@ -1,33 +1,38 @@
 plugins {
+    id "wtmp.deps-conventions"
     id "base"
-    id "maven-publish"
+    id 'wtmp.publishing-conventions'
+    id 'wtmp.versioning-conventions'
 }
 
-task zipJasper(type: Zip) {
-    from '.'
-    include '*.png'
-    include '*.jrxml'
-    archiveBaseName = 'usbr-actionpanel-jasper'
-    includeEmptyDirs = false
-    destinationDirectory = file("$projectDir/build")
-
-    eachFile { fileCopyDetails ->
-        fileCopyDetails.setRelativePath(fileCopyDetails.getRelativePath().prepend("reports/jasper"))
-    }
+allprojects {
+    group = 'usbr.wat.plugins'
+    version = versionConventions.getConventionVersion()
 }
-build.dependsOn(zipJasper)
-assemble.dependsOn(zipJasper)
+
+def jasperSourceSet = objects.sourceDirectorySet("jasperSource", "jasperSource")
+jasperSourceSet.srcDir('src/main/jasper')
+
+tasks.register("zipJasper", Zip) { zip ->
+    zip.from jasperSourceSet
+    zip.include '**/*.png'
+    zip.include '**/*.jrxml'
+    zip.archiveBaseName = 'usbr-actionpanel-jasper'
+    zip.includeEmptyDirs = false
+    zip.destinationDirectory = file("$projectDir/build")
+}
 
 artifacts {
-    'default' zipJasper
-    archives zipJasper
+    'default' tasks.named("zipJasper")
 }
+
+assemble.dependsOn(configurations.'default'.artifacts)
 
 publishing {
     publications {
         maven(MavenPublication) {
             artifactId = "usbr-actionpanel-jasper"
-            artifact source: zipJasper, extension: 'zip'
+            artifact source: tasks.named("zipJasper"), extension: 'zip'
         }
     }
 }
